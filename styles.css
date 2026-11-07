@@ -151,13 +151,12 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 
 .hero {
   position: relative;
-  min-height: 680px;
   display: grid;
   grid-template-columns: 1fr .9fr;
   align-items: center;
   gap: 24px;
-  padding-top: 65px;
-  padding-bottom: 70px;
+  padding-top: 28px;
+  padding-bottom: 12px;
 }
 .hero-copy { position: relative; z-index: 2; padding: 16px 0 0 4px; }
 .eyebrow {
@@ -202,12 +201,11 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 }
 .hero-intro {
   max-width: 480px;
-  margin: 26px 0 28px;
+  margin: 18px 0 0;
   color: var(--ink-soft);
   font-size: 17px;
   line-height: 1.65;
 }
-.hero-actions { display: flex; align-items: center; flex-wrap: wrap; gap: 27px; }
 .text-link {
   color: var(--ink);
   font-size: 13px;
@@ -217,7 +215,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 }
 .text-link span { margin-left: 5px; color: var(--coral); }
 .hero-signature sup, .footer-bottom sup { font-size: 9px; margin-left: 1px; }
-.hero-art { position: relative; min-height: 540px; margin: 0 -5px 0 -4px; }
+.hero-art { position: relative; min-height: 448px; margin: 0 -5px 0 -4px; }
 .art-sun {
   position: absolute;
   top: 3%;
@@ -285,7 +283,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 }
 .postmark b { position: absolute; right: 11px; bottom: 13px; color: var(--coral); font-size: 16px; }
 
-.services { padding-top: 118px; padding-bottom: 120px; }
+.services { padding-top: 48px; padding-bottom: 120px; }
 .section-heading { margin-bottom: 37px; }
 .heading-row { display: flex; align-items: end; justify-content: space-between; gap: 35px; }
 .section-heading h2, .audience h2, .approach h2, .contact-copy h2, .neighborhood h2 {
@@ -320,20 +318,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .service-card-brand { background: var(--green); }
 .service-card-search { background: var(--lavender); }
 .service-card-ai { background: #f8d971; }
-.card-top { width: 100%; display: flex; align-items: center; justify-content: space-between; }
-.service-number { font-size: 9px; font-weight: 800; letter-spacing: .14em; }
-.card-sticker {
-  width: 31px;
-  height: 31px;
-  display: grid;
-  place-items: center;
-  border: 1px solid var(--ink);
-  border-radius: 50%;
-  box-shadow: 2px 3px 0 var(--ink);
-  background: rgba(255,255,255,.52);
-  font-size: 16px;
-}
-.service-icon { position: relative; height: 70px; margin: 11px 0 6px; display: flex; align-items: center; justify-content: center; }
+.service-icon { position: relative; height: 70px; margin: 4px 0 6px; display: flex; align-items: center; justify-content: center; }
 .browser-icon {
   width: 91px;
   height: 58px;
@@ -354,10 +339,8 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .search-icon::after { position: absolute; right: -24px; bottom: -12px; width: 30px; height: 9px; border-radius: 6px; background: var(--ink); content: ""; }
 .search-icon span { width: 14px; height: 14px; border-radius: 50%; background: var(--yellow); }
 .search-icon b { position: absolute; color: var(--coral); font-size: 22px; top: 6px; right: 2px; }
-.ai-icon { width: 87px; height: 67px; }
-.ai-icon b { position: relative; z-index: 2; display: grid; place-items: center; width: 56px; height: 45px; border: 2px solid var(--ink); border-radius: 14px 11px 15px 10px; background: var(--white); font-family: var(--serif); font-size: 20px; box-shadow: 4px 5px 0 var(--ink); transform: rotate(-7deg); }
-.ai-orbit { position: absolute; width: 80px; height: 34px; border: 1.5px dashed var(--ink); border-radius: 50%; transform: rotate(24deg); }
-.ai-icon i { position: absolute; top: -2px; right: 2px; width: 13px; height: 13px; border: 1px solid var(--ink); border-radius: 50%; background: var(--coral); box-shadow: 2px 2px 0 var(--ink); }
+.ai-icon { width: 84px; height: 78px; }
+.ai-icon svg { display: block; width: 84px; height: 78px; transform: rotate(-6deg); }
 .service-card h3 { margin: 4px 0 10px; font-family: var(--serif); font-size: 24px; font-weight: 600; line-height: 1.05; letter-spacing: -.03em; }
 .service-card p { margin: 0 0 18px; color: #304a49; font-size: 12px; line-height: 1.55; }
 .service-card a { display: inline-flex; align-items: center; gap: 8px; margin-top: auto; font-size: 11px; font-weight: 800; text-decoration: none; }
@@ -420,23 +403,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .audience { display: grid; grid-template-columns: .8fr 1.2fr; align-items: center; gap: 8%; padding-top: 122px; padding-bottom: 124px; }
 .audience h2 { max-width: 460px; font-size: clamp(42px, 4.7vw, 60px); }
 .audience-intro > p:last-child { max-width: 360px; margin: 22px 0 0; color: var(--ink-soft); font-size: 15px; }
-.audience-board {
-  position: relative;
-  min-height: 355px;
-  padding: 34px 30px 28px;
-  border: 2px solid var(--ink);
-  background:
-    linear-gradient(rgba(24,58,61,.045) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(24,58,61,.045) 1px, transparent 1px),
-    #ebdfcb;
-  background-size: 25px 25px;
-  box-shadow: 9px 10px 0 var(--ink);
-  transform: rotate(1deg);
-}
-.audience-board::before { position: absolute; top: -12px; left: 46%; width: 92px; height: 25px; background: rgba(235,94,69,.76); content: ""; transform: rotate(-4deg); clip-path: polygon(0 8%, 20% 0, 40% 9%, 62% 1%, 82% 8%, 100% 2%, 97% 96%, 75% 91%, 53% 98%, 34% 91%, 13% 99%, 2% 93%); }
-.board-label { display: inline-flex; align-items: center; gap: 7px; margin: 0 0 18px; color: var(--ink-soft); font-size: 9px; font-weight: 800; letter-spacing: .15em; }
-.board-label span { color: var(--coral); font-size: 16px; }
-.audience-list { position: relative; z-index: 1; display: flex; flex-wrap: wrap; gap: 13px 11px; margin: 0; padding: 0; list-style: none; }
+.audience-list { display: flex; flex-wrap: wrap; align-content: center; gap: 13px 11px; margin: 0; padding: 0; list-style: none; }
 .audience-chip {
   display: inline-flex;
   align-items: center;
@@ -458,10 +425,6 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 .chip-lilac { background: var(--lavender); transform: rotate(-1.3deg); }
 .chip-orange { background: #f3a76e; transform: rotate(1.5deg); }
 .chip-white { background: var(--white); }
-.pin { position: absolute; z-index: 3; top: 20px; width: 14px; height: 14px; border: 1.5px solid var(--ink); border-radius: 50%; box-shadow: 2px 3px 0 rgba(24,58,61,.5); }
-.pin-yellow { right: 44px; background: var(--yellow); }
-.pin-coral { top: auto; right: 22px; bottom: 31px; background: var(--coral); }
-.scribble-board { position: absolute; right: 25px; bottom: 28px; color: var(--coral); font-family: var(--hand); font-size: 24px; font-weight: 700; line-height: .85; text-align: right; transform: rotate(-8deg); }
 
 .approach { padding-top: 109px; padding-bottom: 121px; border-top: 1px solid var(--line); }
 .approach-heading { max-width: 760px; margin: 0 auto 58px; text-align: center; }
@@ -574,7 +537,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 @media (max-width: 1060px) {
   .hero { grid-template-columns: 1fr .82fr; }
   .hero h1 { font-size: clamp(58px, 7vw, 84px); }
-  .hero-art { min-height: 500px; }
+  .hero-art { min-height: 424px; }
   .hero-art .photo-card { top: 62px; height: 350px; }
   .art-sun { width: 270px; height: 270px; }
   .service-grid { grid-template-columns: repeat(2, 1fr); gap: 19px; }
@@ -621,12 +584,12 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   }
   .site-menu.is-open { display: flex; }
   .site-menu > a:not(.button) { padding: 13px 0; border-bottom: 1px solid var(--line); }
-  .site-menu .menu-cta { margin-top: 14px; align-self: flex-start; }
-  .hero { grid-template-columns: 1fr; gap: 12px; min-height: auto; padding-top: 52px; padding-bottom: 65px; }
+  .site-menu .menu-cta { margin-bottom: 14px; align-self: flex-start; }
+  .hero { grid-template-columns: 1fr; gap: 12px; padding-top: 24px; padding-bottom: 8px; }
   .hero-copy { padding: 0; }
   .hero h1 { max-width: 590px; font-size: clamp(56px, 13vw, 88px); }
   .hero-intro { max-width: 520px; font-size: 16px; }
-  .hero-art { width: min(100%, 510px); min-height: 430px; justify-self: center; margin-top: 5px; }
+  .hero-art { width: min(100%, 510px); min-height: 376px; justify-self: center; margin-top: 5px; }
   .art-sun { top: 2%; right: 13%; width: 250px; height: 250px; }
   .hero-art .photo-card { top: 42px; width: 47%; height: 320px; padding: 7px 7px 38px; }
   .photo-card-main { left: 2%; }
@@ -634,7 +597,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .postmark { display: none; }
   .postmark b { right: 8px; bottom: 9px; font-size: 13px; }
   .tape-main { top: 20px; left: 24%; }
-  .services { padding-top: 91px; padding-bottom: 90px; }
+  .services { padding-top: 40px; padding-bottom: 90px; }
   .heading-row { align-items: flex-start; flex-direction: column; gap: 15px; }
   .section-heading h2, .audience h2 { font-size: clamp(43px, 10vw, 61px); }
   .heading-row > p { max-width: 380px; }
@@ -656,13 +619,9 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
   .neighborhood-copy > p:not(.eyebrow) { font-size: 14px; }
   .neighborhood-scribble { right: 9px; bottom: 5px; font-size: 20px; }
   .audience { grid-template-columns: 1fr; gap: 33px; padding-top: 88px; padding-bottom: 95px; }
-  .audience-board { min-height: 338px; padding: 31px 18px 25px; }
   .audience-list { gap: 10px 9px; }
   .audience-chip { padding: 8px 10px 8px 8px; font-size: 11px; }
   .audience-chip span { width: 22px; height: 22px; font-size: 11px; }
-  .scribble-board { right: 17px; bottom: 16px; font-size: 21px; }
-  .pin-yellow { right: 30px; }
-  .pin-coral { right: 17px; bottom: 15px; }
   .approach { padding-top: 85px; padding-bottom: 90px; }
   .approach-heading { margin-bottom: 39px; text-align: left; }
   .approach-heading .eyebrow { justify-content: flex-start; }
@@ -688,7 +647,7 @@ button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible
 @media (max-width: 390px) {
   .section-wrap { width: calc(100% - 32px); }
   .hero h1 { font-size: 54px; }
-  .hero-art { min-height: 405px; }
+  .hero-art { min-height: 350px; }
   .hero-art .photo-card { top: 38px; height: 300px; }
   .audience-chip { gap: 6px; padding-inline: 7px; font-size: 10px; }
 }
