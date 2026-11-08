@@ -126,8 +126,16 @@ section, .marquee { scroll-margin-top: var(--header-height); }
 .split {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 0.92fr);
-  gap: var(--space-xl);
   align-items: center;
+}
+
+.hero-grid {
+  gap: var(--space-2xl);
+}
+
+.split {
+  gap: var(--space-xl);
+  align-items: start;
 }
 
 .hero-grid > *,
@@ -137,11 +145,8 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   min-width: 0;
 }
 
-.split { align-items: start; }
-
 .hero.section {
-  /* Room above the eyebrow; clear handoff into Services. */
-  padding-block: var(--space-lg) var(--space-xl);
+  padding-block: var(--space-xl) var(--space-2xl);
 }
 
 .hero-copy,
@@ -158,18 +163,21 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   gap: 0;
 }
 
-.hero-copy .t-title {
+.hero-copy .t-eyebrow {
   margin-bottom: var(--space-md);
 }
 
-.hero-copy .t-body-lg {
+.hero-copy .t-title {
   margin-bottom: var(--space-lg);
+}
+
+.hero-copy .t-body-lg {
+  margin-bottom: var(--space-xl);
   font-size: var(--type-eyebrow);
   line-height: 1.35;
   color: var(--chartreuse);
 }
 
-.hero-copy .t-eyebrow,
 .prose .t-eyebrow { margin-bottom: var(--space-sm); }
 
 .measure {
@@ -202,11 +210,11 @@ section, .marquee { scroll-margin-top: var(--header-height); }
 
 .hero-art {
   position: relative; /* [X] Showit places art by hand. These offsets are mine. */
-  min-height: 300px;
+  min-height: 320px;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding-inline: var(--space-sm);
+  padding-inline: var(--space-md);
 }
 
 .sticker { display: block; height: auto; }
@@ -215,7 +223,7 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  gap: var(--space-md);
+  gap: var(--space-lg);
   width: 100%;
 }
 
@@ -451,9 +459,8 @@ section, .marquee { scroll-margin-top: var(--header-height); }
     gap: var(--space-md);
   }
 
-  .hero-grid,
-  .split {
-    gap: var(--space-lg);
+  .hero-grid {
+    gap: var(--space-xl);
   }
 
   .services-layout {
@@ -511,7 +518,7 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   }
 
   .hero.section {
-    padding-block: var(--space-md) var(--space-lg);
+    padding-block: var(--space-lg) var(--space-xl);
   }
 
   .hero-grid,
@@ -523,7 +530,7 @@ section, .marquee { scroll-margin-top: var(--header-height); }
     width: 100%;
   }
 
-  .hero-grid { gap: var(--space-md); }
+  .hero-grid { gap: var(--space-lg); }
 
   .split { gap: var(--space-lg); }
 
@@ -567,8 +574,9 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   .sticker-doughnut,
   .sticker-cup { position: static; }
 
-  .hero-copy .t-title { margin-bottom: var(--space-sm); }
-  .hero-copy .t-body-lg { margin-bottom: var(--space-md); }
+  .hero-copy .t-eyebrow { margin-bottom: var(--space-sm); }
+  .hero-copy .t-title { margin-bottom: var(--space-md); }
+  .hero-copy .t-body-lg { margin-bottom: var(--space-lg); }
 
   .sticker-doughnut { width: min(40%, 140px); }
   .sticker-cup { width: min(34%, 115px); }
