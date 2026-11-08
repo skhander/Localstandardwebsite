@@ -203,8 +203,8 @@ section, .marquee { scroll-margin-top: 82px; }
 }
 
 .spin-badge {
-  width: 48px;
-  height: 48px;
+  width: 40px;
+  height: 40px;
   flex: none;
   color: var(--red);
 }
@@ -505,7 +505,7 @@ section, .marquee { scroll-margin-top: 82px; }
   .sticker-doughnut,
   .sticker-cup { position: static; }
 
-  .spin-badge { width: 36px; height: 36px; }
+  .spin-badge { width: 30px; height: 30px; }
 
   .sticker-doughnut { width: min(48%, 180px); }
   .sticker-cup { width: min(40%, 150px); }
