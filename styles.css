@@ -52,7 +52,8 @@ section, .marquee { scroll-margin-top: 82px; }
   max-width: 100%;
 }
 
-.site-menu { display: contents; }
+/* Desktop: logo only. Services + Book with Us live in the mobile menu. */
+.site-menu { display: none; }
 
 .nav__links--left,
 .nav__links--right {
@@ -193,9 +194,8 @@ section, .marquee { scroll-margin-top: 82px; }
 }
 
 .sticker-speak {
-  width: min(100%, 280px);
-  margin-inline: auto;
-  margin-top: var(--space-sm);
+  width: min(100%, 420px);
+  margin: 0 0 0.5rem;
 }
 
 .spin-badge {
@@ -241,23 +241,25 @@ section, .marquee { scroll-margin-top: 82px; }
 .service-cards .tile {
   min-height: 299px;
   padding: 1.5rem 1.15rem 1.25rem;
-  color: var(--black);
+  color: #ffffff;
   align-items: center;
   text-align: center;
 }
 
-.service-cards .tile--wine { color: var(--cream); }
-.service-cards .tile--olive { color: var(--black); }
-.service-cards .tile--blue { color: var(--wine); }
+.service-cards .tile--wine,
+.service-cards .tile--olive,
+.service-cards .tile--blue {
+  color: #ffffff;
+}
 
 .tile-name {
   margin: 0;
   font-size: 3rem;
   line-height: 1.05;
-  color: var(--black);
+  color: #ffffff;
 }
 
-.service-cards .tile--wine .tile-name { color: var(--cream); }
+.service-cards .tile--wine .tile-name { color: #ffffff; }
 
 .service-cards .tile p {
   margin-top: 0.85rem;
