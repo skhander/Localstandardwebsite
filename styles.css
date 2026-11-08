@@ -137,7 +137,7 @@ section, .marquee { scroll-margin-top: 82px; }
 
 .hero-sticker {
   display: block;
-  width: min(70%, 260px);
+  width: min(58%, 200px);
   height: auto;
   margin: 0 auto;
 }
@@ -178,7 +178,7 @@ section, .marquee { scroll-margin-top: 82px; }
 
 .hero-art {
   position: relative; /* [X] Showit places art by hand. These offsets are mine. */
-  min-height: 440px;
+  min-height: 320px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -190,17 +190,17 @@ section, .marquee { scroll-margin-top: 82px; }
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  gap: 0.75rem;
+  gap: 0.6rem;
   width: 100%;
 }
 
 .sticker-doughnut {
-  width: min(52%, 280px);
+  width: min(44%, 210px);
   margin: 0;
 }
 
 .sticker-cup {
-  width: min(42%, 220px);
+  width: min(36%, 165px);
   margin: 0;
 }
 
@@ -497,8 +497,9 @@ section, .marquee { scroll-margin-top: 82px; }
   .sticker-doughnut,
   .sticker-cup { position: static; }
 
-  .sticker-doughnut { width: min(48%, 180px); }
-  .sticker-cup { width: min(40%, 150px); }
+  .hero-sticker { width: min(52%, 170px); }
+  .sticker-doughnut { width: min(40%, 140px); }
+  .sticker-cup { width: min(34%, 115px); }
 
   .t-title { font-size: 2.5rem; }          /* 40px mobile title [M stylesheet] */
   .t-heading { font-size: 1.75rem; }       /* 28px [M stylesheet] */
