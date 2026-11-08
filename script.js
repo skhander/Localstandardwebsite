@@ -1,51 +1,63 @@
-const menuToggle = document.querySelector(".menu-toggle");
-const siteMenu = document.querySelector("#site-menu");
+/* Page behavior for Local Standard.
+   Marquee, float, and spin live in brand.js.
+   The menu and the email draft are this page. */
 
-if (menuToggle && siteMenu) {
-  menuToggle.addEventListener("click", () => {
-    const isOpen = menuToggle.getAttribute("aria-expanded") === "true";
-    menuToggle.setAttribute("aria-expanded", String(!isOpen));
-    menuToggle.querySelector(".sr-only").textContent = isOpen ? "Open navigation" : "Close navigation";
-    siteMenu.classList.toggle("is-open", !isOpen);
-  });
+(() => {
+  const toggle = document.querySelector(".menu-toggle");
+  const menu = document.querySelector("#site-menu");
 
-  siteMenu.querySelectorAll("a").forEach((link) => {
-    link.addEventListener("click", () => {
-      menuToggle.setAttribute("aria-expanded", "false");
-      menuToggle.querySelector(".sr-only").textContent = "Open navigation";
-      siteMenu.classList.remove("is-open");
+  function closeMenu() {
+    if (!toggle || !menu) return;
+    toggle.setAttribute("aria-expanded", "false");
+    toggle.setAttribute("aria-label", "Menu");
+    menu.classList.remove("is-open");
+  }
+
+  if (toggle && menu) {
+    toggle.addEventListener("click", () => {
+      const open = toggle.getAttribute("aria-expanded") === "true";
+      toggle.setAttribute("aria-expanded", String(!open));
+      toggle.setAttribute("aria-label", open ? "Menu" : "Close menu");
+      menu.classList.toggle("is-open", !open);
     });
-  });
-}
 
-const year = document.querySelector("#year");
-if (year) year.textContent = String(new Date().getFullYear());
+    menu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
+    });
 
-const contactForm = document.querySelector("#contact-form");
-const formNote = document.querySelector("#form-note");
-// Contact form recipient provided by Local Standard.
-const contactEmail = "skhander@gmail.com";
+    document.addEventListener("keydown", (event) => {
+      if (event.key === "Escape") closeMenu();
+    });
+  }
 
-if (contactForm) {
-  contactForm.addEventListener("submit", (event) => {
-    event.preventDefault();
-    if (!contactForm.reportValidity()) return;
+  const year = document.querySelector("#year");
+  if (year) year.textContent = String(new Date().getFullYear());
 
-    const formData = new FormData(contactForm);
-    const name = String(formData.get("name") || "").trim();
-    const email = String(formData.get("email") || "").trim();
-    const interest = String(formData.get("interest") || "").trim();
-    const message = String(formData.get("message") || "").trim();
-    const subject = encodeURIComponent("Project inquiry — " + interest);
-    const body = encodeURIComponent(
-      "Hi Local Standard,\n\n" +
-      "My name is " + name + " (" + email + ").\n" +
-      "I’m interested in: " + interest + ".\n\n" +
-      (message ? message + "\n\n" : "") +
-      "Looking forward to talking."
-    );
+  const contactForm = document.querySelector("#contact-form");
+  const formNote = document.querySelector("#form-note");
+  const contactEmail = "skhander@gmail.com";
 
-    window.location.href = "mailto:" + contactEmail + "?subject=" + subject + "&body=" + body;
-    if (formNote) formNote.textContent = "Your email draft is ready. Give it a look, then hit send.";
-  });
-}
+  if (contactForm) {
+    contactForm.addEventListener("submit", (event) => {
+      event.preventDefault();
+      if (!contactForm.reportValidity()) return;
+
+      const formData = new FormData(contactForm);
+      const name = String(formData.get("name") || "").trim();
+      const email = String(formData.get("email") || "").trim();
+      const interest = String(formData.get("interest") || "").trim();
+      const message = String(formData.get("message") || "").trim();
+      const subject = encodeURIComponent("Project inquiry — " + interest);
+      const body = encodeURIComponent(
+        "Hi Local Standard,\n\n" +
+        "My name is " + name + " (" + email + ").\n" +
+        "I’m interested in: " + interest + ".\n\n" +
+        (message ? message + "\n\n" : "") +
+        "Looking forward to talking."
+      );
+
+      window.location.href = "mailto:" + contactEmail + "?subject=" + subject + "&body=" + body;
+      if (formNote) formNote.textContent = "Your email draft is ready. Give it a look, then hit send.";
+    });
+  }
+})();

@@ -1,0 +1,467 @@
+@import url("https://fonts.googleapis.com/css2?family=Birthstone&family=Caveat&family=Courier+Prime&family=Fraunces:opsz,wght,SOFT@9..144,400,50&display=swap");
+@import url("https://api.fontshare.com/v2/css?f[]=switzer@400&display=swap");
+
+/* ==========================================================================
+   Unruly Creative Taste Index: brand.css
+   Tags used in DESIGN.md and below:
+     [M]  measured from itsunrulycreative.com computed styles or CSS (Nov 7, 2026)
+     [I]  inferred from the measured pattern; not seen as a single value
+     [X]  invented for this index; not on the site
+   Fonts: Ivar Soft, Black Editorial Script and Biro Script Plus are commercial.
+   This file loads Fraunces, Birthstone and Caveat in their place.
+   Courier Prime and Switzer are the real faces.
+   ========================================================================== */
+
+:root {
+  /* ---- Palette. Names are [X]. Hex values are [M]. ---------------------- */
+  --red: #ed2129;
+  --cream: #f5f2db;
+  --wine: #491221;
+  --chartreuse: #eff1ae;
+  --olive: #8b792e;
+  --blue: #769cd1;
+  --white: #ffffff;
+  --black: #000000;
+
+  /* ---- Semantic roles --------------------------------------------------- */
+  --color-bg: var(--cream);                  /* a common section ground [M] */
+  --color-text: var(--wine);                 /* body and headings on cream [M] */
+  --color-text-on-red: var(--cream);         /* nav, bar, primary button [M] */
+  --color-text-on-dark: var(--cream);        /* text on wine and black [M] */
+  --color-accent: var(--chartreuse);         /* nav hover, stats, pills [M] */
+  --color-footer: var(--red);                /* footer band [M] */
+  --color-focus: var(--wine);                /* [X] no focus ring was measured */
+
+  /* ---- Type families ---------------------------------------------------- */
+  --font-display: "Ivar Soft", "Fraunces", "Iowan Old Style", Georgia, serif;          /* Ivar Soft is commercial; Fraunces is the free substitute */
+  --font-text: "Switzer", "Switzer Regular", Arial, sans-serif;                        /* the real face, weight 400 only [M] */
+  --font-label: "Courier Prime", "Courier New", Courier, monospace;                   /* the real face [M] */
+  --font-script: "Black Editorial Script", "Birthstone", cursive;                     /* commercial; Birthstone is the free substitute */
+  --font-aside: "Biro Script Plus", "Caveat", cursive;                                /* commercial; Caveat is the free substitute */
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;      /* [X] the site has no mono role; used for hex in this index */
+
+  /* ---- Weights. Only 400 is loaded. [M] --------------------------------- */
+  --weight: 400;
+
+  /* ---- Type scale ------------------------------------------------------- */
+  --type-title: 3.4375rem;     /* 55px [M] */
+  --type-title-alt: 2.8125rem; /* 45px, about and services heroes [M] */
+  --type-heading: 2.5rem;      /* 40px [M] */
+  --type-service: 2.125rem;    /* 34px, service names on /my-services [M] */
+  --type-value: 1.75rem;       /* 28px, value titles on /about-me [M] */
+  --type-script-display: 3.75rem; /* 60px, "Some Client Love" [M] */
+  --type-script-tile: 2.3125rem;  /* 37px, home service tiles [M] */
+  --type-script-label: 1.5625rem; /* 25px, footer labels [M] */
+  --type-aside: 1.375rem;      /* 22px [M] */
+  --type-stat: 4rem;           /* 64px [M] */
+  --type-eyebrow: 1.25rem;     /* 20px [M] */
+  --type-eyebrow-sm: 1.1875rem;/* 19px, prices and stat labels [M] */
+  --type-nav: 1.125rem;        /* 18px [M] */
+  --type-body: 0.875rem;       /* 14px [M] */
+  --type-body-lg: 1rem;        /* 16px, closing lines [M] */
+  --type-button: 1.125rem;     /* 18px [M] */
+
+  --leading-title: 1.1;        /* [M] */
+  --leading-heading: 1;        /* [M] */
+  --leading-eyebrow: 1.1;      /* [M] */
+  --leading-body: 1.5;         /* 21px at 14px [M] */
+  --leading-aside: 1;          /* 22px at 22px [M] */
+  --leading-stat: 1;           /* [M] */
+
+  --tracking: 0em;             /* [M] brand text. Do not tighten. */
+
+  /* ---- Layout ------------------------------------------------------------ */
+  --canvas: 75rem;             /* 1200px, the Showit canvas, centered [M] */
+  --header-height: 70px;       /* [M] fixed bar */
+  --bar-height: 35px;          /* [M] announcement, about 30 to 35px */
+  --gutter: 1.25rem;           /* [X] the live site has no shared side padding */
+
+  /* Spacing below is [X]. Showit places elements by hand.
+     These exist so a new page has a rhythm. They are not site tokens. */
+  --space-2xs: 0.25rem;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 2rem;
+  --space-xl: 4.5rem;
+
+  /* ---- Shape ------------------------------------------------------------- */
+  --radius-pill: 20px;         /* [M] buttons and service tiles */
+  --border-width: 1px;         /* [M] */
+  --shadow: none;              /* [M] brand elements have no shadow */
+
+  --btn-nav-height: 30px;      /* [M] */
+  --btn-height: 40px;          /* [M] */
+  --btn-nav-min: 200px;        /* [M] live width. Growing past it is [I]. */
+  --btn-min: 230px;            /* [M] live width. Growing past it is [I]. */
+
+  /* ---- Motion ------------------------------------------------------------ */
+  --dur-nav: 0.5s;             /* [M] nav colour and underline */
+  --dur-button: 0s;            /* [M] hover swap has no duration */
+  --dur-marquee: 60s;          /* [M] */
+  --dur-float: 3s;             /* [M] */
+  --dur-spin: 12s;             /* [M] */
+  --ease-float: ease-in-out;   /* [M] */
+  --ease-linear: linear;       /* [M] */
+  --float-distance: -15px;     /* [M] */
+}
+
+/* ==========================================================================
+   Base
+   ========================================================================== */
+
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-text);
+  font-size: var(--type-body);
+  font-weight: var(--weight);
+  font-synthesis: none;
+  line-height: var(--leading-body);
+  letter-spacing: var(--tracking);
+  -webkit-font-smoothing: antialiased;
+}
+
+.canvas {
+  max-width: var(--canvas);
+  margin-inline: auto;
+  padding-inline: var(--gutter);
+}
+
+/* ==========================================================================
+   Type
+   ========================================================================== */
+
+.t-title,
+.t-heading,
+.t-service,
+.t-value,
+.t-stat {
+  font-family: var(--font-display);
+  font-weight: var(--weight);
+  font-variation-settings: "SOFT" 50, "opsz" 72, "wght" 400;
+  letter-spacing: var(--tracking);
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.t-title { font-size: var(--type-title); line-height: var(--leading-title); }
+.t-heading { font-size: var(--type-heading); line-height: var(--leading-heading); }
+.t-service { font-size: var(--type-service); line-height: var(--leading-heading); text-transform: capitalize; }
+.t-value { font-size: var(--type-value); line-height: var(--leading-heading); }
+.t-stat {
+  font-size: var(--type-stat);
+  line-height: var(--leading-stat);
+  text-transform: none;
+  color: var(--chartreuse);
+}
+
+.t-script {
+  font-family: var(--font-script);
+  font-weight: var(--weight);
+  font-style: normal;
+  letter-spacing: var(--tracking);
+  text-transform: capitalize;
+  line-height: 1;
+}
+
+.t-aside {
+  font-family: var(--font-aside);
+  font-size: var(--type-aside);
+  font-weight: var(--weight);
+  line-height: var(--leading-aside);
+  letter-spacing: var(--tracking);
+  text-transform: capitalize;
+  margin: 0;
+}
+
+.t-eyebrow,
+.t-price,
+.t-nav {
+  font-family: var(--font-label);
+  font-weight: var(--weight);
+  letter-spacing: var(--tracking);
+  margin: 0;
+}
+
+.t-eyebrow {
+  font-size: var(--type-eyebrow);
+  line-height: var(--leading-eyebrow);
+  text-transform: uppercase;
+}
+
+.t-price {
+  font-size: var(--type-eyebrow-sm);
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.t-body { font-size: var(--type-body); line-height: var(--leading-body); text-transform: none; }
+.t-body-lg { font-size: var(--type-body-lg); line-height: 1.4; } /* 16px measured; 1.4 is the 22.4px closing line [M] */
+
+/* Bands. Text colour follows the ground. [M] for the pairs that were seen. */
+.band { color: var(--color-text); }
+.band--cream { background: var(--cream); color: var(--wine); }
+.band--red { background: var(--red); color: var(--cream); }
+.band--wine { background: var(--wine); color: var(--cream); }
+.band--chartreuse { background: var(--chartreuse); color: var(--wine); }
+.band--olive { background: var(--olive); color: var(--chartreuse); }
+.band--blue { background: var(--blue); color: var(--wine); }
+.band--white { background: var(--white); color: var(--wine); }
+.band--black { background: var(--black); color: var(--cream); }
+
+.band--red .t-eyebrow,
+.band--wine .t-eyebrow,
+.band--black .t-eyebrow,
+.band--olive .t-eyebrow { color: inherit; }
+
+/* ==========================================================================
+   Buttons. Three measured pills. Hover swaps are [M]. Duration is 0s. [M]
+   ========================================================================== */
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  min-width: var(--btn-min);
+  height: var(--btn-height);
+  padding: 0 20px;
+  border: var(--border-width) solid var(--red);
+  border-radius: var(--radius-pill);
+  background: var(--red);
+  color: var(--cream);
+  font-family: var(--font-label);
+  font-size: var(--type-button);
+  font-weight: var(--weight);
+  line-height: var(--btn-height);
+  letter-spacing: var(--tracking);
+  text-align: center;
+  text-decoration: none;
+  text-transform: capitalize;
+  white-space: nowrap;
+  cursor: pointer;
+  transition:
+    background-color var(--dur-button) linear,
+    color var(--dur-button) linear,
+    border-color var(--dur-button) linear;
+}
+
+.btn:hover {
+  background: var(--white);
+  color: var(--red);
+  border-color: var(--red);
+}
+
+.btn--nav {
+  min-width: var(--btn-nav-min);
+  height: var(--btn-nav-height);
+  line-height: var(--btn-nav-height);
+  padding: 0 18px;
+  background: var(--chartreuse);
+  border-color: var(--chartreuse);
+  color: var(--wine);
+}
+
+.btn--nav:hover {
+  background: transparent;
+  border-color: var(--chartreuse);
+  color: var(--chartreuse);
+}
+
+.btn--service {
+  background: var(--white);
+  color: var(--red);
+  border-color: var(--red);
+}
+
+.btn--service:hover {
+  background: var(--chartreuse);
+  color: var(--red);
+  border-color: var(--red);
+}
+
+a:focus-visible,
+button:focus-visible,
+summary:focus-visible {
+  outline: 2px solid var(--color-focus); /* [X] */
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   Links and nav
+   ========================================================================== */
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.nav-link {
+  font-family: var(--font-label);
+  font-size: var(--type-nav);
+  font-weight: var(--weight);
+  line-height: 1.1;
+  letter-spacing: var(--tracking);
+  text-transform: uppercase;
+  color: var(--cream);
+  text-decoration: none;
+  transition:
+    color var(--dur-nav) linear,
+    text-decoration-color var(--dur-nav) linear;
+}
+
+.nav-link:hover {
+  color: var(--chartreuse);
+  text-decoration: underline;
+}
+
+.text-link {
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+  transition: opacity var(--dur-nav) linear;
+}
+
+.text-link:hover { opacity: 0.8; } /* [M] heading and paragraph links */
+
+/* ==========================================================================
+   Bars, tiles, footer
+   ========================================================================== */
+
+.announce {
+  background: var(--red);
+  color: var(--cream);
+  min-height: var(--bar-height);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.announce a {
+  font-family: var(--font-label);
+  font-size: var(--type-nav);
+  letter-spacing: var(--tracking);
+  text-transform: uppercase;
+  transition: text-decoration-color var(--dur-nav) linear;
+}
+
+.announce a:hover { text-decoration: underline; }
+
+.site-header {
+  position: sticky;            /* live bar is fixed [M]; sticky keeps the demo usable */
+  top: 0;
+  z-index: 50;
+  background: var(--red);      /* the live bar is transparent over a red ground [M] */
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  min-height: var(--header-height);
+  padding-inline: var(--gutter);
+}
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-lg);
+}
+
+.tile {
+  background: var(--red);
+  color: var(--cream);
+  border-radius: var(--radius-pill);
+  min-height: 180px;
+  padding: var(--space-lg);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: var(--space-md);
+}
+
+.tile--wine { background: var(--wine); }
+.tile--olive { background: var(--olive); color: var(--chartreuse); }
+.tile--blue { background: var(--blue); color: var(--wine); }
+
+.section {
+  padding-block: var(--space-xl); /* [X] demo rhythm, not a site token */
+}
+
+/* ==========================================================================
+   Motion. Keyframes match the site. [M]
+   ========================================================================== */
+
+@keyframes unruly-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@keyframes unruly-float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(var(--float-distance)); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes unruly-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+.marquee {
+  overflow: hidden;
+  background: var(--blue);
+  color: var(--white); /* "WARNING: MAY CAUSE BRAND ENVY" computed to white [M] */
+}
+
+.marquee__row {
+  display: flex;
+  width: max-content;
+}
+
+.marquee__track {
+  display: flex;
+  gap: 1rem;
+  padding: var(--space-sm) 1rem var(--space-sm) 0;
+}
+
+/* The live keyframe moves one copy by its own width plus 1rem. [M]
+   Animating the doubled row by -50% is the same motion. The -50% is [I]. */
+.is-scrolling {
+  animation: unruly-scroll var(--dur-marquee) var(--ease-linear) infinite;
+}
+
+.is-floating {
+  animation: unruly-float var(--dur-float) var(--ease-float) infinite;
+}
+
+.is-spinning {
+  animation: unruly-spin var(--dur-spin) var(--ease-linear) infinite;
+}
+
+.marquee__item {
+  font-family: var(--font-label);
+  font-size: var(--type-eyebrow);
+  letter-spacing: var(--tracking);
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
