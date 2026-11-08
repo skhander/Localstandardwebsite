@@ -2,11 +2,25 @@
    Colour, type, pills, and motion come from brand.css.
    Placement, the mobile menu panel, and form fields live here. */
 
-html { background: var(--red); }
+html {
+  background: var(--red);
+  overflow-x: clip;
+}
+
+body { overflow-x: clip; }
 
 p, h1, h2, h3, ul, ol, figure { margin: 0; }
 
-section, .marquee { scroll-margin-top: 82px; }
+section, .marquee { scroll-margin-top: var(--header-height); }
+
+/* Shared section rhythm — brand.css uses space-xl; tighten for this site. */
+.section {
+  padding-block: var(--space-lg);
+}
+
+.site-footer.section {
+  padding-block: var(--space-lg) var(--space-md);
+}
 
 .skip-link {
   position: absolute;
@@ -27,7 +41,7 @@ section, .marquee { scroll-margin-top: 82px; }
 .brand {
   display: inline-flex;
   align-items: center;
-  gap: 0.55rem;
+  gap: var(--space-sm);
   color: var(--cream);
   font-family: var(--font-label);
   font-size: 0.95rem;
@@ -66,15 +80,15 @@ section, .marquee { scroll-margin-top: 82px; }
   grid-column: 1;
   grid-row: 1;
   justify-self: end;
-  gap: 0.85rem;
-  padding-right: 0.85rem;
+  gap: var(--space-sm);
+  padding-right: var(--space-sm);
 }
 
 .nav__links--right {
   grid-column: 3;
   grid-row: 1;
   justify-self: start;
-  padding-left: 1.25rem;
+  padding-left: var(--gutter);
 }
 
 .brand { grid-column: 2; grid-row: 1; justify-self: center; }
@@ -110,7 +124,7 @@ section, .marquee { scroll-margin-top: 82px; }
 .split {
   display: grid;
   grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
-  gap: var(--space-xl);
+  gap: var(--space-lg);
   align-items: center;
 }
 
@@ -123,6 +137,11 @@ section, .marquee { scroll-margin-top: 82px; }
 
 .split { align-items: start; }
 
+.hero.section {
+  /* Tight top so the sticker isn’t floating in empty band; room below before Services. */
+  padding-block: var(--space-sm) var(--space-lg);
+}
+
 .hero-copy,
 .prose {
   display: flex;
@@ -132,15 +151,32 @@ section, .marquee { scroll-margin-top: 82px; }
   text-align: center;
 }
 
-.hero-copy .t-eyebrow,
-.prose .t-eyebrow { margin-bottom: var(--space-xs); }
+.hero-copy {
+  /* Explicit stack: sticker → title → line → CTA */
+  gap: 0;
+}
 
 .hero-sticker {
   display: block;
   width: min(58%, 200px);
   height: auto;
-  margin: 0 auto;
+  /* Clear air under the mark so it doesn’t collide with the headline. */
+  margin: 0 auto var(--space-lg);
 }
+
+.hero-copy .t-title {
+  margin-bottom: var(--space-sm);
+}
+
+.hero-copy .t-body-lg {
+  margin-bottom: var(--space-md);
+  font-size: var(--type-eyebrow);
+  line-height: 1.35;
+  color: var(--chartreuse);
+}
+
+.hero-copy .t-eyebrow,
+.prose .t-eyebrow { margin-bottom: var(--space-xs); }
 
 .measure {
   max-width: 38rem; /* [X] Showit text boxes are narrower than the 1200px canvas. */
@@ -150,12 +186,6 @@ section, .marquee { scroll-margin-top: 82px; }
 .nowrap { white-space: nowrap; }
 
 #hero-title { text-transform: none; }
-
-.hero-copy .t-body-lg {
-  font-size: var(--type-eyebrow);
-  line-height: 1.35;
-  color: var(--chartreuse);
-}
 
 #contact .prose .t-body-lg {
   font-size: var(--type-aside);
@@ -178,7 +208,7 @@ section, .marquee { scroll-margin-top: 82px; }
 
 .hero-art {
   position: relative; /* [X] Showit places art by hand. These offsets are mine. */
-  min-height: 320px;
+  min-height: 280px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -190,7 +220,7 @@ section, .marquee { scroll-margin-top: 82px; }
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  gap: 0.6rem;
+  gap: var(--space-sm);
   width: 100%;
 }
 
@@ -205,8 +235,8 @@ section, .marquee { scroll-margin-top: 82px; }
 }
 
 .sticker-speak {
-  width: min(100%, 420px);
-  margin: 0 0 0.5rem;
+  width: min(100%, 360px);
+  margin: 0 0 var(--space-xs);
 }
 
 .story-photo { margin: 0; }
@@ -223,7 +253,7 @@ section, .marquee { scroll-margin-top: 82px; }
    so these shrink to the canvas. That fit is [X]. */
 .services-layout {
   display: grid;
-  gap: var(--space-xl);
+  gap: var(--space-lg);
 }
 
 .services-intro {
@@ -240,12 +270,12 @@ section, .marquee { scroll-margin-top: 82px; }
 .service-cards {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 1.25rem;
+  gap: var(--space-md);
 }
 
 .service-cards .tile {
-  min-height: 299px;
-  padding: 1.5rem 1.15rem 1.25rem;
+  min-height: 280px;
+  padding: var(--space-lg) var(--space-md) var(--space-md);
   color: #ffffff;
   align-items: center;
   text-align: center;
@@ -267,7 +297,7 @@ section, .marquee { scroll-margin-top: 82px; }
 .service-cards .tile--wine .tile-name { color: #ffffff; }
 
 .service-cards .tile p {
-  margin-top: 0.85rem;
+  margin-top: var(--space-sm);
   font-size: var(--type-body-lg);
   line-height: 1.45;
 }
@@ -301,6 +331,7 @@ section, .marquee { scroll-margin-top: 82px; }
 .steps h3 { margin: 0.35rem 0; }
 
 .contact-form {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -331,8 +362,8 @@ section, .marquee { scroll-margin-top: 82px; }
   width: 100%;
   max-width: 100%;
   min-width: 0;
-  margin-top: 0.4rem;
-  padding: 0.7rem 0.75rem;
+  margin-top: var(--space-xs);
+  padding: var(--space-sm) var(--space-sm);
   border: 1px solid var(--cream); /* [X] no field border was measured. Square, no shadow. */
   border-radius: 0;
   background: transparent;
@@ -368,7 +399,7 @@ section, .marquee { scroll-margin-top: 82px; }
 .footer-grid {
   display: grid;
   grid-template-columns: minmax(0, 1fr);
-  gap: 0.7rem;
+  gap: var(--space-sm);
   justify-items: center;
   text-align: center;
 }
@@ -414,6 +445,12 @@ section, .marquee { scroll-margin-top: 82px; }
   outline-color: var(--chartreuse);
 }
 
+@media (max-width: 1100px) {
+  .service-cards {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
 @media (max-width: 860px) {
   .brand { grid-column: 1 / -1; }
   .brand img { height: 28px; }
@@ -429,7 +466,7 @@ section, .marquee { scroll-margin-top: 82px; }
     right: 0;
     top: 100%;
     background: var(--chartreuse); /* mobile menu ground [M] */
-    padding: var(--space-lg) var(--gutter) var(--space-xl);
+    padding: var(--space-lg) var(--gutter) var(--space-lg);
   }
 
   html.js .site-menu.is-open .nav__links {
@@ -455,6 +492,14 @@ section, .marquee { scroll-margin-top: 82px; }
     color: var(--cream);
   }
 
+  .section {
+    padding-block: var(--space-lg) var(--space-md);
+  }
+
+  .hero.section {
+    padding-block: var(--space-sm) var(--space-lg);
+  }
+
   .hero-grid,
   .split,
   .services-layout,
@@ -464,9 +509,11 @@ section, .marquee { scroll-margin-top: 82px; }
     width: 100%;
   }
 
-  .hero-grid { gap: var(--space-lg); }
+  .hero-grid { gap: var(--space-md); }
 
   .split { gap: var(--space-md); }
+
+  .services-layout { gap: var(--space-md); }
 
   .service-cards .tile {
     min-height: 0;
@@ -481,7 +528,7 @@ section, .marquee { scroll-margin-top: 82px; }
   .service-cards .tile .btn {
     width: auto;
     min-width: var(--btn-min);
-    padding-inline: 20px;
+    padding-inline: var(--space-md);
     margin-inline: auto;
   }
 
@@ -497,7 +544,14 @@ section, .marquee { scroll-margin-top: 82px; }
   .sticker-doughnut,
   .sticker-cup { position: static; }
 
-  .hero-sticker { width: min(52%, 170px); }
+  .hero-sticker {
+    width: min(52%, 170px);
+    margin-bottom: var(--space-sm);
+  }
+
+  .hero-copy .t-title { margin-bottom: var(--space-xs); }
+  .hero-copy .t-body-lg { margin-bottom: var(--space-sm); }
+
   .sticker-doughnut { width: min(40%, 140px); }
   .sticker-cup { width: min(34%, 115px); }
 
