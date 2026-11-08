@@ -232,6 +232,10 @@ section, .marquee { scroll-margin-top: 82px; }
   text-align: center;
 }
 
+#services-title {
+  font-size: var(--type-title-alt);
+}
+
 .service-cards {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -450,6 +454,8 @@ section, .marquee { scroll-margin-top: 82px; }
   }
 
   .hero-grid { gap: var(--space-lg); }
+
+  .split { gap: var(--space-md); }
 
   .service-cards .tile {
     min-height: 0;
