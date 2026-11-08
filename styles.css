@@ -224,12 +224,17 @@ section, .marquee { scroll-margin-top: 82px; }
   gap: var(--space-xl);
 }
 
-.services-intro {
+.services-intro,
+.contact-intro {
   display: flex;
   align-items: center;
   justify-content: center;
   gap: 0.85rem;
   text-align: center;
+}
+
+.band--black .spin-badge {
+  color: var(--chartreuse);
 }
 
 #services-title {
