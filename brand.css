@@ -71,19 +71,19 @@
   --tracking: 0em;             /* [M] brand text. Do not tighten. */
 
   /* ---- Layout ------------------------------------------------------------ */
-  --canvas: 75rem;             /* 1200px, the Showit canvas, centered [M] */
+  --canvas: 70rem;             /* ~1120px content max; side margins stay clear on wide screens */
   --header-height: 70px;       /* [M] fixed bar */
   --bar-height: 35px;          /* [M] announcement, about 30 to 35px */
-  --gutter: 1.25rem;           /* [X] the live site has no shared side padding */
+  --gutter: clamp(1.5rem, 4.5vw, 2.75rem);
 
-  /* Spacing below is [X]. Showit places elements by hand.
-     These exist so a new page has a rhythm. They are not site tokens. */
+  /* Shared spacing scale — used by sections, grids, cards, and type stacks. */
   --space-2xs: 0.25rem;
   --space-xs: 0.5rem;
   --space-sm: 0.75rem;
-  --space-md: 1rem;
+  --space-md: 1.25rem;
   --space-lg: 2rem;
-  --space-xl: 4.5rem;
+  --space-xl: 3rem;
+  --space-2xl: 4.5rem;
 
   /* ---- Shape ------------------------------------------------------------- */
   --radius-pill: 20px;         /* [M] buttons and service tiles */
