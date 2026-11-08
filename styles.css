@@ -150,6 +150,10 @@ section, .marquee { scroll-margin-top: 82px; }
   color: var(--chartreuse);
 }
 
+#contact .prose .t-body-lg {
+  font-size: var(--type-aside);
+}
+
 .hero-heat {
   white-space: nowrap;
   text-decoration: underline;
@@ -357,6 +361,16 @@ section, .marquee { scroll-margin-top: 82px; }
   max-width: 28rem;
   font-size: var(--type-body);
   text-align: center;
+}
+
+.form-honey {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  opacity: 0;
+  pointer-events: none;
 }
 
 .footer-grid {

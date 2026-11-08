@@ -123,9 +123,9 @@
           <label class="field" for="email">Email
             <input id="email" name="email" type="email" autocomplete="email" required>
           </label>
-          <label class="field" for="interest">Service you’re interested in
+          <label class="field" for="interest">Service
             <select id="interest" name="interest" required>
-              <option value="" selected disabled>Choose One</option>
+              <option value="" selected disabled>Choose a Service</option>
               <option>Website Design &amp; Development</option>
               <option>Brand &amp; Identity</option>
               <option>Reputation &amp; Search (SEO + AEO)</option>
@@ -136,7 +136,9 @@
           <label class="field" for="message">Details
             <textarea id="message" name="message" rows="3"></textarea>
           </label>
+          <input class="form-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
           <button class="btn" type="submit">Let’s talk</button>
+          <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
         </form>
       </div>
     </section>
