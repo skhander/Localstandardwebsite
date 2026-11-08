@@ -71,26 +71,11 @@ section, .marquee { scroll-margin-top: var(--header-height); }
 /* Desktop: logo only. Services + Book with Us live in the mobile menu. */
 .site-menu { display: none; }
 
-.nav__links--left,
-.nav__links--right {
+.nav__links {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: var(--space-lg);
-}
-
-.nav__links--left {
-  grid-column: 1;
-  grid-row: 1;
-  justify-self: end;
-  gap: var(--space-sm);
-  padding-right: var(--space-sm);
-}
-
-.nav__links--right {
-  grid-column: 3;
-  grid-row: 1;
-  justify-self: start;
-  padding-left: var(--gutter);
+  gap: var(--space-md);
 }
 
 .brand { grid-column: 2; grid-row: 1; justify-self: center; }
@@ -487,30 +472,23 @@ section, .marquee { scroll-margin-top: var(--header-height); }
     right: 0;
     top: 100%;
     background: var(--chartreuse); /* mobile menu ground [M] */
-    padding: var(--space-lg) var(--gutter) var(--space-lg);
+    padding: var(--space-lg) var(--gutter);
   }
 
   html.js .site-menu.is-open .nav__links {
-    flex-direction: column;
-    align-items: center;
-    justify-self: center;
     width: 100%;
-    gap: var(--space-md);
-    padding: 0;
   }
 
-  html.js .site-menu.is-open .nav-link { color: var(--wine); }
+  html.js .site-menu.is-open .nav-link {
+    color: var(--wine);
+    font-size: var(--type-eyebrow);
+    line-height: 1.2;
+    padding-block: var(--space-xs);
+  }
 
   html.js .site-menu.is-open .nav-link:hover {
     color: var(--wine);
     text-decoration: underline;
-  }
-
-  /* The chartreuse pill disappears on the chartreuse menu. [I] */
-  html.js .site-menu.is-open .btn--nav {
-    background: var(--red);
-    border-color: var(--red);
-    color: var(--cream);
   }
 
   .section {
