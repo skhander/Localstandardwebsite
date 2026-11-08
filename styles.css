@@ -135,6 +135,13 @@ section, .marquee { scroll-margin-top: 82px; }
 .hero-copy .t-eyebrow,
 .prose .t-eyebrow { margin-bottom: var(--space-xs); }
 
+.hero-sticker {
+  display: block;
+  width: min(70%, 260px);
+  height: auto;
+  margin: 0 auto;
+}
+
 .measure {
   max-width: 38rem; /* [X] Showit text boxes are narrower than the 1200px canvas. */
   margin-inline: auto;
