@@ -278,12 +278,16 @@ section, .marquee { scroll-margin-top: var(--header-height); }
 
 .tile-name {
   margin: 0;
-  font-size: 3rem;
+  font-family: var(--font-display);
+  /* Just under Services (45px); Soft+opsz for more presence than plain italic. */
+  font-size: 2.5rem; /* 40px */
+  font-weight: var(--weight);
+  font-style: italic;
+  font-variation-settings: "SOFT" 100, "opsz" 144, "wght" 400;
+  letter-spacing: -0.02em;
   line-height: 1.05;
   color: #ffffff;
 }
-
-.service-cards .tile--wine .tile-name { color: #ffffff; }
 
 .service-cards .tile p {
   margin-top: var(--space-sm);
@@ -539,7 +543,10 @@ section, .marquee { scroll-margin-top: var(--header-height); }
     margin-inline: auto;
   }
 
-  .tile-name { font-size: 2.4rem; }
+  .tile-name {
+    font-size: 2.25rem;
+    letter-spacing: -0.015em;
+  }
 
   .hero-art {
     min-height: 0;
