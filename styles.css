@@ -175,7 +175,7 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   margin-bottom: 0;
   margin-inline: 0;
   max-width: 28rem;
-  font-size: clamp(1.125rem, 1.5vw, 1.5rem);
+  font-size: clamp(1rem, 1.25vw, 1.25rem);
   line-height: 1.5;
   color: var(--cream);
 }
@@ -738,7 +738,7 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   }
   .hero-copy .t-body-lg {
     margin-bottom: var(--space-lg);
-    font-size: var(--type-eyebrow);
+    font-size: 1.0625rem; /* a step under the old 20px eyebrow size */
     max-width: none;
   }
 
