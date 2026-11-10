@@ -503,8 +503,13 @@ section, .marquee { scroll-margin-top: var(--header-height); }
     display: flex;
     flex-direction: column;
     justify-content: center;
-    /* Full mobile first screen so Services doesn’t peek above the fold. */
-    min-height: calc(100svh - var(--header-height));
+    /* Clear the first screen on iPhone (Safari chrome + home indicator). */
+    min-height: calc(
+      100svh - var(--header-height) + env(safe-area-inset-bottom, 0px) + 2.5rem
+    );
+    min-height: calc(
+      100dvh - var(--header-height) + env(safe-area-inset-bottom, 0px) + 2.5rem
+    );
     padding-block: var(--space-lg) var(--space-xl);
     box-sizing: border-box;
   }
