@@ -115,7 +115,8 @@ section, .marquee { scroll-margin-top: var(--header-height); }
 }
 
 .hero-grid {
-  gap: var(--space-2xl);
+  gap: clamp(var(--space-xl), 6vw, 5.5rem);
+  width: 100%;
 }
 
 .split {
@@ -131,7 +132,17 @@ section, .marquee { scroll-margin-top: var(--header-height); }
 }
 
 .hero.section {
-  padding-block: var(--space-xl) var(--space-2xl);
+  display: flex;
+  align-items: center;
+  /* Full first screen + buffer so Services clears the fold. */
+  min-height: calc(100svh - var(--header-height) + 2rem);
+  min-height: calc(100dvh - var(--header-height) + 2rem);
+  padding-block: clamp(var(--space-xl), 6vh, var(--space-2xl));
+  box-sizing: border-box;
+}
+
+.hero.section > .canvas {
+  width: 100%;
 }
 
 .hero-copy,
@@ -144,23 +155,30 @@ section, .marquee { scroll-margin-top: var(--header-height); }
 }
 
 .hero-copy {
-  /* Explicit stack: eyebrow → title → line → CTA */
-  gap: 0;
+  /* Eyebrow → title → line → CTA with real breathing room */
+  gap: clamp(1.5rem, 4vh, 3.25rem);
+  padding-block: clamp(var(--space-sm), 2.5vh, var(--space-xl));
 }
 
 .hero-copy .t-eyebrow {
-  margin-bottom: var(--space-md);
+  margin-bottom: 0;
 }
 
 .hero-copy .t-title {
-  margin-bottom: var(--space-lg);
+  margin-bottom: 0;
+  font-size: clamp(3.4375rem, 4.6vw, 4.25rem);
 }
 
 .hero-copy .t-body-lg {
-  margin-bottom: var(--space-xl);
-  font-size: var(--type-eyebrow);
-  line-height: 1.35;
+  margin-bottom: 0;
+  max-width: 30rem;
+  font-size: clamp(1.125rem, 1.5vw, 1.5rem);
+  line-height: 1.5;
   color: var(--chartreuse);
+}
+
+.hero-copy .btn {
+  margin-top: clamp(0.35rem, 1.2vh, 1rem);
 }
 
 .prose .t-eyebrow { margin-bottom: var(--space-sm); }
@@ -195,7 +213,7 @@ section, .marquee { scroll-margin-top: var(--header-height); }
 
 .hero-art {
   position: relative; /* [X] Showit places art by hand. These offsets are mine. */
-  min-height: 320px;
+  min-height: clamp(320px, 52vh, 520px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -208,17 +226,17 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  gap: var(--space-lg);
+  gap: clamp(var(--space-md), 3vw, 2.5rem);
   width: 100%;
 }
 
 .sticker-doughnut {
-  width: min(44%, 210px);
+  width: min(62%, 340px);
   margin: 0;
 }
 
 .sticker-cup {
-  width: min(36%, 165px);
+  width: min(50%, 265px);
   margin: 0;
 }
 
@@ -583,9 +601,23 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   .sticker-doughnut,
   .sticker-cup { position: static; }
 
+  .hero-copy {
+    gap: 0;
+    padding-block: 0;
+  }
+
   .hero-copy .t-eyebrow { margin-bottom: var(--space-sm); }
-  .hero-copy .t-title { margin-bottom: var(--space-md); }
-  .hero-copy .t-body-lg { margin-bottom: var(--space-lg); }
+  .hero-copy .t-title {
+    margin-bottom: var(--space-md);
+    font-size: 2.5rem; /* keep mobile title at 40px */
+  }
+  .hero-copy .t-body-lg {
+    margin-bottom: var(--space-lg);
+    font-size: var(--type-eyebrow);
+    max-width: none;
+  }
+
+  .hero-copy .btn { margin-top: 0; }
 
   .sticker-doughnut { width: min(48%, 170px); }
   .sticker-cup { width: min(40%, 140px); }
