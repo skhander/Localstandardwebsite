@@ -115,7 +115,9 @@ section, .marquee { scroll-margin-top: var(--header-height); }
 }
 
 .hero-grid {
-  gap: clamp(var(--space-xl), 6vw, 5.5rem);
+  /* Give the headline room so it wraps wider, not four skinny lines. */
+  grid-template-columns: minmax(0, 1.45fr) minmax(0, 0.85fr);
+  gap: clamp(var(--space-lg), 4vw, 3.5rem);
   width: 100%;
 }
 
@@ -156,6 +158,8 @@ section, .marquee { scroll-margin-top: var(--header-height); }
 
 .hero-copy {
   /* Eyebrow → title → line → CTA with real breathing room */
+  align-items: flex-start;
+  text-align: left;
   gap: clamp(1.5rem, 4vh, 3.25rem);
   padding-block: clamp(var(--space-sm), 2.5vh, var(--space-xl));
 }
@@ -166,12 +170,15 @@ section, .marquee { scroll-margin-top: var(--header-height); }
 
 .hero-copy .t-title {
   margin-bottom: 0;
-  font-size: clamp(3.4375rem, 4.6vw, 4.25rem);
+  width: 100%;
+  font-size: clamp(3.4375rem, 4vw, 3.875rem);
+  text-wrap: balance;
 }
 
 .hero-copy .t-body-lg {
   margin-bottom: 0;
-  max-width: 30rem;
+  margin-inline: 0;
+  max-width: 28rem;
   font-size: clamp(1.125rem, 1.5vw, 1.5rem);
   line-height: 1.5;
   color: var(--chartreuse);
@@ -602,6 +609,8 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   .sticker-cup { position: static; }
 
   .hero-copy {
+    align-items: center;
+    text-align: center;
     gap: 0;
     padding-block: 0;
   }
