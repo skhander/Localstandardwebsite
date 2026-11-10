@@ -500,7 +500,21 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   }
 
   .hero.section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Full mobile first screen so Services doesn’t peek above the fold. */
+    min-height: calc(100svh - var(--header-height));
     padding-block: var(--space-lg) var(--space-xl);
+    box-sizing: border-box;
+  }
+
+  .hero.section > .canvas {
+    width: 100%;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
 
   .hero-grid,
@@ -512,7 +526,11 @@ section, .marquee { scroll-margin-top: var(--header-height); }
     width: 100%;
   }
 
-  .hero-grid { gap: var(--space-lg); }
+  .hero-grid {
+    flex: 1 1 auto;
+    gap: var(--space-xl);
+    align-content: center;
+  }
 
   .split { gap: var(--space-lg); }
 
@@ -551,9 +569,10 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   .hero-art {
     min-height: 0;
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     justify-content: center;
     padding-inline: 0;
+    padding-block: var(--space-md);
   }
 
   .sticker-doughnut,
@@ -563,8 +582,8 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   .hero-copy .t-title { margin-bottom: var(--space-md); }
   .hero-copy .t-body-lg { margin-bottom: var(--space-lg); }
 
-  .sticker-doughnut { width: min(40%, 140px); }
-  .sticker-cup { width: min(34%, 115px); }
+  .sticker-doughnut { width: min(48%, 170px); }
+  .sticker-cup { width: min(40%, 140px); }
 
   .t-title { font-size: 2.5rem; }          /* 40px mobile title [M stylesheet] */
   .t-heading { font-size: 1.75rem; }       /* 28px [M stylesheet] */
