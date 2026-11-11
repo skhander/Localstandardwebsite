@@ -199,15 +199,26 @@ section, .marquee { scroll-margin-top: var(--header-height); }
 }
 
 .hero-copy {
-  /* Eyebrow → title → line → CTA with real breathing room */
+  /* Badge sits in the left column above the headline (same stack as mobile) */
   align-items: flex-start;
   text-align: left;
   gap: clamp(1.5rem, 4vh, 3.25rem);
   padding-block: clamp(var(--space-sm), 2.5vh, var(--space-xl));
 }
 
+.hero-badge {
+  display: block;
+  width: 10.375rem; /* 166px desktop */
+  height: auto;
+  aspect-ratio: 1 / 1;
+  object-fit: contain;
+  flex-shrink: 0;
+  /* Net ~18px under the badge against the shared flex gap */
+  margin: 0 0 calc(1.125rem - clamp(1.5rem, 4vh, 3.25rem));
+}
+
 .hero-copy .t-title {
-  margin-bottom: 0;
+  margin: 0;
   width: 100%;
   font-size: clamp(3.4375rem, 4vw, 3.875rem);
   text-wrap: balance;
@@ -835,6 +846,11 @@ section, .marquee { scroll-margin-top: var(--header-height); }
     text-align: center;
     gap: 0;
     padding-block: 0;
+  }
+
+  .hero-badge {
+    width: 8.4375rem; /* 135px mobile — 10% over 123px */
+    margin: 0 0 1.125rem; /* ~18px above the headline */
   }
 
   .hero-copy .t-title {
