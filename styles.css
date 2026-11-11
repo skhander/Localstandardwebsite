@@ -263,12 +263,22 @@ section, .marquee { scroll-margin-top: var(--header-height); }
 }
 
 .hero-heat {
+  position: relative;
+  display: inline;
   white-space: nowrap;
-  text-decoration: underline;
-  text-decoration-color: var(--red);
-  text-decoration-thickness: 0.08em;
-  text-underline-offset: 0.14em;
-  text-decoration-skip-ink: none;
+  text-decoration: none;
+}
+
+.hero-heat::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 100%;
+  height: 0.32em;
+  margin-top: -8px;
+  background: url("images/hero-underline.png") center / 100% 100% no-repeat;
+  pointer-events: none;
 }
 
 .t-title .t-script,
@@ -281,11 +291,18 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   position: relative; /* [X] Showit places art by hand. These offsets are mine. */
   min-height: clamp(320px, 52vh, 520px);
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 0;
   padding-inline: var(--space-md);
+}
+
+/* One float on the whole cluster so badge + stickers stay in phase */
+.sticker-cluster {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  width: 100%;
 }
 
 .sticker { display: block; height: auto; }
@@ -313,6 +330,11 @@ section, .marquee { scroll-margin-top: var(--header-height); }
 .sticker-speak {
   width: min(100%, 360px);
   margin: 0 0 var(--space-xs);
+}
+
+/* display:block on .sticker would otherwise override the hidden attribute */
+.sticker-speak[hidden] {
+  display: none;
 }
 
 .story-photo { margin: 0; }
@@ -849,10 +871,8 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   .hero-art {
     min-height: 0;
     display: flex;
-    flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 0;
     padding-inline: 0;
     padding-block: var(--space-md);
   }
