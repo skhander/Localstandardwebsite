@@ -217,6 +217,11 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   margin: 0 0 calc(1.125rem - clamp(1.5rem, 4vh, 3.25rem));
 }
 
+/* display:block above would otherwise override the hidden attribute */
+.hero-badge[hidden] {
+  display: none;
+}
+
 .hero-copy .t-title {
   margin: 0;
   width: 100%;
