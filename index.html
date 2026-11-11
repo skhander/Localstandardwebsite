@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#ed2129">
   <meta name="description" content="Web design, branding, SEO, and AI automation for New York City small businesses. Local Standard helps neighborhood shops get found online.">
-  <title>NYC Web Design &amp; SEO for Local Businesses | Local Standard</title>
+  <title>NYC Web Design &amp; SEO Agency | Local Standard</title>
   <meta property="og:type" content="website">
   <meta property="og:site_name" content="Local Standard">
   <meta property="og:title" content="Local Standard | NYC Web Design for Local Businesses">
@@ -17,26 +17,40 @@
   <meta name="twitter:image" content="images/og-image.jpg">
   <link rel="stylesheet" href="brand.css">
   <link rel="stylesheet" href="styles.css">
+  <script>
+    (function () {
+      try {
+        var lang = localStorage.getItem("ls-lang");
+        if (lang === "es" || lang === "en") document.documentElement.lang = lang;
+      } catch (e) {}
+    })();
+  </script>
   <script src="brand.js" defer></script>
   <script src="script.js" defer></script>
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <a class="skip-link" href="#main" data-i18n="skip">Skip to content</a>
 
   <header class="site-header">
     <div class="nav">
-      <nav class="site-menu" id="site-menu" aria-label="Main navigation">
+      <div class="lang-switch" role="group" aria-label="Language" data-i18n-aria="lang.group">
+        <button type="button" class="lang-switch__btn is-active" data-set-lang="en" aria-pressed="true">EN</button>
+        <span class="lang-switch__sep" aria-hidden="true">/</span>
+        <button type="button" class="lang-switch__btn" data-set-lang="es" aria-pressed="false">ES</button>
+      </div>
+
+      <nav class="site-menu" id="site-menu" aria-label="Main navigation" data-i18n-aria="nav.label">
         <div class="nav__links">
-          <a class="nav-link" href="#services">Services</a>
-          <a class="nav-link" href="#contact">Book with Us</a>
+          <a class="nav-link" href="#services" data-i18n="nav.services">Services</a>
+          <a class="nav-link" href="#contact" data-i18n="nav.book">Book with Us</a>
         </div>
       </nav>
 
-      <a class="brand" href="#top" aria-label="Local Standard, home">
+      <a class="brand" href="#top" aria-label="Local Standard, home" data-i18n-aria="brand.home">
         <img src="images/logo.png" alt="">
       </a>
 
-      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Menu">
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Menu" data-i18n-aria="nav.menu">
         <span class="menu-toggle__bar" aria-hidden="true"></span>
         <span class="menu-toggle__bar" aria-hidden="true"></span>
         <span class="menu-toggle__bar" aria-hidden="true"></span>
@@ -48,12 +62,9 @@
     <section class="band band--black section hero" id="top" aria-labelledby="hero-title">
       <div class="canvas hero-grid">
         <div class="hero-copy">
-          <span class="spin-badge" data-spin aria-hidden="true">
-            <svg viewBox="0 0 46 46"><path d="M23 2.8 27.5 17l14.7-5.2-8.3 13.2 10.2 10.5-15-1.2L23 47l-6.1-13.7-15 1.2 10.2-10.5L3.8 10.8 18.5 16 23 2.8Z" fill="currentColor"/></svg>
-          </span>
-          <h1 class="t-title" id="hero-title">Great businesses deserve to <span class="hero-heat">be seen</span>.</h1>
-          <p class="t-body-lg measure">Local Standard builds websites and tools to help them stand out.</p>
-          <a class="btn" href="#services">Explore Services</a>
+          <h1 class="t-title" id="hero-title"><span data-i18n="hero.before">Great businesses deserve to </span><span class="hero-heat" data-i18n="hero.heat">be seen</span><span data-i18n="hero.after">.</span></h1>
+          <p class="t-body-lg measure" data-i18n="hero.sub">Local Standard builds websites and tools to help them stand out.</p>
+          <a class="btn" href="#services" data-i18n="hero.cta">Explore Services</a>
         </div>
         <div class="hero-art" aria-hidden="true">
           <div class="sticker-pair">
@@ -67,36 +78,36 @@
     <section class="band band--cream section" id="services" aria-labelledby="services-title">
       <div class="canvas services-layout">
         <div class="services-intro">
-          <h1 class="t-heading" id="services-title">Services</h1>
+          <h1 class="t-heading" id="services-title" data-i18n="services.title">Services</h1>
         </div>
         <div class="service-cards">
           <article class="tile">
             <div>
-              <h3 class="tile-name" id="offer-web">Websites</h3>
-              <p>A modern, clean site that turns visitors into customers.</p>
+              <h3 class="tile-name" id="offer-web" data-i18n="services.web.title">Websites</h3>
+              <p data-i18n="services.web.body">A modern, clean site that turns visitors into customers.</p>
             </div>
-            <a class="btn btn--service" href="#contact">Build your site</a>
+            <a class="btn btn--service" href="#contact" data-i18n="services.web.cta">Build your site</a>
           </article>
           <article class="tile tile--wine">
             <div>
-              <h3 class="tile-name" id="offer-brand">Branding</h3>
-              <p>A clear identity people recognize and remember.</p>
+              <h3 class="tile-name" id="offer-brand" data-i18n="services.brand.title">Branding</h3>
+              <p data-i18n="services.brand.body">A clear identity people recognize and remember.</p>
             </div>
-            <a class="btn btn--service" href="#contact">Create your brand</a>
+            <a class="btn btn--service" href="#contact" data-i18n="services.brand.cta">Create your brand</a>
           </article>
           <article class="tile tile--olive">
             <div>
-              <h3 class="tile-name" id="offer-search">Visibility</h3>
-              <p>SEO &amp; AEO to help more customers find you.</p>
+              <h3 class="tile-name" id="offer-search" data-i18n="services.vis.title">Visibility</h3>
+              <p data-i18n="services.vis.body">SEO &amp; AEO to help more customers find you.</p>
             </div>
-            <a class="btn btn--service" href="#contact">Get found</a>
+            <a class="btn btn--service" href="#contact" data-i18n="services.vis.cta">Get found</a>
           </article>
           <article class="tile tile--blue">
             <div>
-              <h3 class="tile-name" id="offer-ai">Automation</h3>
-              <p>Custom AI agents set up to handle repetitive tasks.</p>
+              <h3 class="tile-name" id="offer-ai" data-i18n="services.ai.title">Automation</h3>
+              <p data-i18n="services.ai.body">Custom AI agents set up to handle repetitive tasks.</p>
             </div>
-            <a class="btn btn--service" href="#contact">Save time</a>
+            <a class="btn btn--service" href="#contact" data-i18n="services.ai.cta">Save time</a>
           </article>
         </div>
       </div>
@@ -106,39 +117,39 @@
       <div class="canvas offer">
         <header class="offer-intro">
           <div class="offer-label-row">
-            <p class="t-eyebrow offer-label">Intro Package</p>
+            <p class="t-eyebrow offer-label" data-i18n="offer.label">Intro Package</p>
             <span class="offer-mark" aria-hidden="true">
               <svg viewBox="0 0 46 46"><path d="M23 2.8 27.5 17l14.7-5.2-8.3 13.2 10.2 10.5-15-1.2L23 47l-6.1-13.7-15 1.2 10.2-10.5L3.8 10.8 18.5 16 23 2.8Z" fill="currentColor"/></svg>
             </span>
           </div>
-          <h2 class="offer-lede" id="offer-title">Everything handled. So you can run your business.</h2>
+          <h2 class="offer-lede" id="offer-title" data-i18n="offer.lede">Everything handled. So you can run your business.</h2>
         </header>
 
         <ul class="offer-list">
           <li class="offer-item">
-            <h3 class="offer-item-name">Your own website</h3>
-            <p>A polished, fast site with your services, prices, hours, photos, and a one-tap call button.</p>
+            <h3 class="offer-item-name" data-i18n="offer.web.title">Your own website</h3>
+            <p data-i18n="offer.web.body">A polished, fast site with your services, prices, hours, photos, and a one-tap call button.</p>
           </li>
           <li class="offer-item">
-            <h3 class="offer-item-name">Google &amp; ChatGPT</h3>
-            <p>Your search presence maximized so local customers can find you.</p>
+            <h3 class="offer-item-name" data-i18n="offer.search.title">Google &amp; ChatGPT</h3>
+            <p data-i18n="offer.search.body">Your search presence maximized so local customers can find you.</p>
           </li>
           <li class="offer-item">
-            <h3 class="offer-item-name">Fresh photos</h3>
-            <p>We visit your shop, take new photos, and add them to your site.</p>
+            <h3 class="offer-item-name" data-i18n="offer.photos.title">Fresh photos</h3>
+            <p data-i18n="offer.photos.body">We visit your shop, take new photos, and add them to your site.</p>
           </li>
           <li class="offer-item">
-            <h3 class="offer-item-name">On-demand Updates</h3>
-            <p>Text us new hours, prices, or holiday closures. We’ll update your site the same day.</p>
+            <h3 class="offer-item-name" data-i18n="offer.updates.title">On-demand updates</h3>
+            <p data-i18n="offer.updates.body">Text us new hours, prices, or holiday closures. We’ll update your site the same day.</p>
           </li>
         </ul>
 
         <div class="offer-footer">
           <div class="offer-total">
-            <p class="offer-total-label">One-time fee</p>
+            <p class="offer-total-label" data-i18n="offer.fee">One-time fee</p>
             <p class="offer-price">$2,500</p>
           </div>
-          <a class="btn btn--offer" href="#contact">Let’s talk</a>
+          <a class="btn btn--offer" href="#contact" data-i18n="offer.cta">Let’s talk</a>
         </div>
       </div>
     </section>
@@ -146,32 +157,32 @@
     <section class="band band--black section" id="contact" aria-labelledby="contact-title">
       <div class="canvas split">
         <div class="prose">
-          <h2 class="t-heading" id="contact-title">Contact</h2>
-          <p class="t-body-lg">Tell us about your business. We'll take it from there.</p>
+          <h2 class="t-heading" id="contact-title" data-i18n="contact.title">Contact</h2>
+          <p class="t-body-lg" data-i18n="contact.sub">Tell us about your business. We'll take it from there.</p>
         </div>
         <form class="contact-form" id="contact-form">
-          <label class="field" for="name">Name
+          <label class="field" for="name"><span data-i18n="form.name">Name</span>
             <input id="name" name="name" type="text" autocomplete="name" required>
           </label>
-          <label class="field" for="email">Email
+          <label class="field" for="email"><span data-i18n="form.email">Email</span>
             <input id="email" name="email" type="email" autocomplete="email" required>
           </label>
-          <label class="field" for="interest">Service
+          <label class="field" for="interest"><span data-i18n="form.service">Service</span>
             <select id="interest" name="interest" required>
-              <option value="" selected disabled>Choose a Service</option>
-              <option>Intro Package</option>
-              <option>Website Design &amp; Development</option>
-              <option>Brand &amp; Identity</option>
-              <option>Reputation &amp; Search (SEO + AEO)</option>
-              <option>AI &amp; Automation</option>
-              <option>A little bit of everything</option>
+              <option value="" selected disabled data-i18n="form.choose">Choose a Service</option>
+              <option data-i18n="form.opt.intro">Intro Package</option>
+              <option data-i18n="form.opt.web">Website Design &amp; Development</option>
+              <option data-i18n="form.opt.brand">Brand &amp; Identity</option>
+              <option data-i18n="form.opt.search">Reputation &amp; Search (SEO + AEO)</option>
+              <option data-i18n="form.opt.ai">AI &amp; Automation</option>
+              <option data-i18n="form.opt.all">A little bit of everything</option>
             </select>
           </label>
-          <label class="field" for="message">Details
+          <label class="field" for="message"><span data-i18n="form.details">Details</span>
             <textarea id="message" name="message" rows="3"></textarea>
           </label>
           <input class="form-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
-          <button class="btn" type="submit">Let’s talk</button>
+          <button class="btn" type="submit" data-i18n="form.submit">Let’s talk</button>
           <p class="form-note" id="form-note" role="status" aria-live="polite"></p>
         </form>
       </div>
@@ -180,9 +191,9 @@
 
   <footer class="band band--red section site-footer">
     <div class="canvas footer-grid">
-      <img class="sticker sticker-speak" src="images/we-speak-sticker.png" alt="We speak Español, বাংলা, اردو, and हिन्दी">
+      <img class="sticker sticker-speak" src="images/we-speak-sticker.png" alt="We speak Español, বাংলা, اردو, and हिन्दी" data-i18n-alt="footer.speak">
       <p class="t-eyebrow">© <span id="year">2026</span> Local Standard</p>
-      <a class="nav-link" href="#top">Back to the top</a>
+      <a class="nav-link" href="#top" data-i18n="footer.top">Back to the top</a>
     </div>
   </footer>
 </body>
