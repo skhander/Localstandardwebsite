@@ -199,7 +199,6 @@ section, .marquee { scroll-margin-top: var(--header-height); }
 }
 
 .hero-copy {
-  /* Badge sits in the left column above the headline (same stack as mobile) */
   align-items: flex-start;
   text-align: left;
   gap: clamp(1.5rem, 4vh, 3.25rem);
@@ -213,8 +212,14 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   aspect-ratio: 1 / 1;
   object-fit: contain;
   flex-shrink: 0;
-  /* Net ~18px under the badge against the shared flex gap */
-  margin: 0 0 calc(1.125rem - clamp(1.5rem, 4vh, 3.25rem));
+  /* Nest into the V between donut + cup so the three read as a triangle */
+  margin: 0 0 -3.15rem;
+  position: relative;
+  left: -38px; /* nudge toward the donut */
+  top: 19px;
+  z-index: 2;
+  /* Soft offset shadow so it reads like the sticker cutouts */
+  filter: drop-shadow(3px 5px 6px rgba(0, 0, 0, 0.45));
 }
 
 /* display:block above would otherwise override the hidden attribute */
@@ -276,8 +281,10 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   position: relative; /* [X] Showit places art by hand. These offsets are mine. */
   min-height: clamp(320px, 52vh, 520px);
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
+  gap: 0;
   padding-inline: var(--space-md);
 }
 
@@ -287,7 +294,7 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   display: flex;
   align-items: flex-end;
   justify-content: center;
-  gap: clamp(var(--space-md), 3vw, 2.5rem);
+  gap: clamp(var(--space-xs), 1.5vw, 1.25rem); /* tighter base of the triangle */
   width: 100%;
 }
 
@@ -299,6 +306,8 @@ section, .marquee { scroll-margin-top: var(--header-height); }
 .sticker-cup {
   width: min(62.5%, 331px);
   margin: 0;
+  position: relative;
+  left: -15px;
 }
 
 .sticker-speak {
@@ -840,8 +849,10 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   .hero-art {
     min-height: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    gap: 0;
     padding-inline: 0;
     padding-block: var(--space-md);
   }
@@ -855,7 +866,13 @@ section, .marquee { scroll-margin-top: var(--header-height); }
 
   .hero-badge {
     width: 8.4375rem; /* 135px mobile — 10% over 123px */
-    margin: 0 0 1.125rem; /* ~18px above the headline */
+    margin: 0 0 -2rem; /* keep the triangle nest on mweb */
+    left: -26px;
+    top: 13px;
+  }
+
+  .sticker-pair {
+    gap: var(--space-xs);
   }
 
   .hero-copy .t-title {
