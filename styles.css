@@ -852,8 +852,8 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   .sticker-doughnut,
   .sticker-cup { position: static; }
 
-  .sticker-doughnut { width: min(60%, 213px); }
-  .sticker-cup { width: min(50%, 175px); }
+  .sticker-doughnut { width: min(45%, 160px); } /* 25% smaller than prior mweb */
+  .sticker-cup { width: min(37.5%, 131px); }
 
   .t-title { font-size: 2.5rem; }          /* 40px mobile title [M stylesheet] */
   .t-heading { font-size: 1.75rem; }       /* 28px [M stylesheet] */
