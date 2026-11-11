@@ -275,7 +275,7 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   left: 0;
   right: 0;
   top: 100%;
-  height: 0.32em;
+  height: 0.28em;
   margin-top: -8px;
   background: url("images/hero-underline.png") center / 100% 100% no-repeat;
   pointer-events: none;
@@ -885,10 +885,7 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   }
 
   .hero-badge {
-    width: 8.4375rem; /* 135px mobile — 10% over 123px */
-    margin: 0 0 -2rem; /* keep the triangle nest on mweb */
-    left: -26px;
-    top: 13px;
+    display: none; /* desktop-only badge */
   }
 
   .sticker-pair {
