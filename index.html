@@ -21,6 +21,8 @@
   <meta name="twitter:image" content="images/og-image.jpg">
   <link rel="stylesheet" href="brand.css">
   <link rel="stylesheet" href="styles.css">
+  <link rel="preload" as="image" href="images/queens-doughnut.webp" type="image/webp">
+  <link rel="preload" as="image" href="images/coffee-cup.webp" type="image/webp">
   <script>
     (function () {
       try {
@@ -78,8 +80,24 @@
         </div>
         <div class="hero-art" aria-hidden="true">
           <div class="sticker-pair" data-float>
-            <img class="sticker sticker-doughnut" src="images/queens-doughnut.png" alt="">
-            <img class="sticker sticker-cup" src="images/coffee-cup.png" alt="">
+            <img
+              class="sticker sticker-doughnut"
+              src="images/queens-doughnut.webp"
+              alt=""
+              width="850"
+              height="771"
+              decoding="async"
+              fetchpriority="high"
+            >
+            <img
+              class="sticker sticker-cup"
+              src="images/coffee-cup.webp"
+              alt=""
+              width="471"
+              height="662"
+              decoding="async"
+              fetchpriority="high"
+            >
           </div>
         </div>
       </div>

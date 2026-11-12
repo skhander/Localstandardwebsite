@@ -444,6 +444,13 @@ a {
   animation: unruly-float var(--dur-float) var(--ease-float) infinite;
 }
 
+/* Start float with CSS so stickers don't wait on deferred JS */
+@media (prefers-reduced-motion: no-preference) {
+  [data-float] {
+    animation: unruly-float var(--dur-float) var(--ease-float) infinite;
+  }
+}
+
 .is-spinning {
   animation: unruly-spin var(--dur-spin) var(--ease-linear) infinite;
 }
