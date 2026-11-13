@@ -7,6 +7,25 @@ html {
   overflow-x: clip;
 }
 
+/* Paint the active language before deferred script.js runs (cuts lang CLS). */
+html.lang-en .t-es,
+html.lang-es .t-en {
+  display: none !important;
+}
+
+html.lang-es .t-es[hidden] {
+  display: unset !important;
+}
+
+html.lang-es img.t-es[hidden],
+html.lang-es .sticker.t-es[hidden] {
+  display: block !important;
+}
+
+html.lang-es .legal-prose.t-es[hidden] {
+  display: grid !important;
+}
+
 body { overflow-x: clip; }
 
 p, h1, h2, h3, ul, ol, figure { margin: 0; }
@@ -55,6 +74,7 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   display: block;
   height: 36px;
   width: auto;
+  aspect-ratio: 160 / 40;
 }
 
 .nav {
@@ -255,7 +275,7 @@ section, .marquee { scroll-margin-top: var(--header-height); }
 #hero-title { text-transform: none; }
 
 #contact .prose .t-body-lg {
-  font-size: var(--type-aside);
+  font-size: var(--type-body-lg);
 }
 
 .hero-heat {
@@ -292,7 +312,11 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   padding-inline: var(--space-md);
 }
 
-.sticker { display: block; height: auto; }
+.sticker {
+  display: block;
+  height: auto;
+  max-width: 100%;
+}
 
 .sticker-pair {
   display: flex;
@@ -310,11 +334,13 @@ section, .marquee { scroll-margin-top: var(--header-height); }
 
 .sticker-doughnut {
   width: min(77.5%, 425px);
+  aspect-ratio: 850 / 771;
   margin: 0;
 }
 
 .sticker-cup {
   width: min(62.5%, 331px);
+  aspect-ratio: 471 / 662;
   margin: 0;
 }
 
@@ -337,6 +363,9 @@ section, .marquee { scroll-margin-top: var(--header-height); }
 
 .sticker-speak {
   width: min(100%, 360px);
+  aspect-ratio: 910 / 284;
+  object-fit: contain;
+  object-position: center;
   margin: 0 0 var(--space-xs);
 }
 
@@ -553,6 +582,7 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   width: 100%;
   height: auto;
   max-width: 42rem;
+  aspect-ratio: 655 / 549;
   object-fit: contain;
   object-position: right bottom;
   mix-blend-mode: screen;
@@ -607,6 +637,13 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   color: var(--cream);
 }
 
+.offer-deliverables {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: end;
+  gap: clamp(var(--space-lg), 4vw, 2.5rem);
+}
+
 .offer-list {
   list-style: none;
   margin: 0;
@@ -615,6 +652,7 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   grid-template-columns: repeat(2, minmax(0, 1fr));
   column-gap: var(--space-xl);
   row-gap: var(--space-lg);
+  min-width: 0;
 }
 
 .offer-item {
@@ -651,6 +689,36 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   flex-direction: column;
   align-items: flex-start;
   padding-top: 0.15rem;
+}
+
+.offer-total {
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  flex: none;
+  padding-bottom: 0.15rem;
+}
+
+.offer-total-label {
+  margin: 0;
+  font-family: var(--font-label);
+  font-size: 0.8125rem;
+  line-height: 1.2;
+  letter-spacing: var(--tracking);
+  text-transform: none;
+  color: color-mix(in srgb, var(--cream) 68%, transparent);
+}
+
+.offer-price {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(1.25rem, 2vw, 1.625rem);
+  font-weight: var(--weight);
+  font-variation-settings: "SOFT" 50, "opsz" 36, "wght" 400;
+  line-height: 1;
+  letter-spacing: var(--tracking);
+  text-transform: none;
+  color: var(--cream);
 }
 
 .btn--offer {
@@ -743,6 +811,7 @@ section, .marquee { scroll-margin-top: var(--header-height); }
 .form-note {
   margin: 0;
   max-width: 28rem;
+  min-height: 1.5em;
   font-size: var(--type-body);
   text-align: center;
 }
@@ -1210,6 +1279,12 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   }
 
   .offer-main {
+    gap: var(--space-lg);
+  }
+
+  .offer-deliverables {
+    grid-template-columns: minmax(0, 1fr);
+    align-items: start;
     gap: var(--space-lg);
   }
 

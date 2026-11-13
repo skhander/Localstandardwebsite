@@ -28,8 +28,8 @@
     if (lang !== "en" && lang !== "es") return;
     currentLang = lang;
     root.lang = lang;
-    root.classList.toggle("lang-es", lang === "es");
-    root.classList.toggle("lang-en", lang === "en");
+    root.classList.remove("lang-es", "lang-en");
+    root.classList.add(lang === "es" ? "lang-es" : "lang-en");
 
     try {
       localStorage.setItem(STORAGE_KEY, lang);

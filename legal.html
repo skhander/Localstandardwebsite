@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en"
+<html lang="en" class="lang-en"
   data-title-en="Legal | Local Standard"
   data-title-es="Legal | Local Standard"
   data-desc-en="Privacy, terms, cookies, refunds, accessibility, and related policies for Local Standard."
@@ -11,18 +11,28 @@
   <meta name="description" content="Privacy, terms, cookies, refunds, accessibility, and related policies for Local Standard.">
   <meta name="robots" content="noindex">
   <title>Legal | Local Standard</title>
-  <link rel="stylesheet" href="brand.css?v=20261114b">
-  <link rel="stylesheet" href="styles.css?v=20261114b">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Birthstone&family=Caveat&family=Courier+Prime&family=Fraunces:opsz,wght,SOFT@9..144,400,50&display=swap">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=switzer@400&display=swap">
+  <link rel="stylesheet" href="brand.css?v=20261114f">
+  <link rel="stylesheet" href="styles.css?v=20261114f">
   <script>
     (function () {
+      var lang = "en";
       try {
-        var lang = localStorage.getItem("ls-lang");
-        if (lang === "es" || lang === "en") document.documentElement.lang = lang;
+        var saved = localStorage.getItem("ls-lang");
+        if (saved === "es" || saved === "en") lang = saved;
       } catch (e) {}
+      var root = document.documentElement;
+      root.lang = lang;
+      root.classList.remove("lang-en", "lang-es");
+      root.classList.add("lang-" + lang);
     })();
   </script>
-  <script src="brand.js?v=20261112v" defer></script>
-  <script src="script.js?v=20261112v" defer></script>
+  <script src="brand.js?v=20261114f" defer></script>
+  <script src="script.js?v=20261114f" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main"><span class="t-en">Skip to content</span><span class="t-es" hidden>Saltar al contenido</span></a>
@@ -369,10 +379,10 @@
       </p>
       <div class="cookie-banner__actions">
         <button type="button" class="cookie-btn cookie-btn--ghost" data-cookie-choice="necessary">
-          <span class="t-en">Necessary</span><span class="t-es" hidden>Necesarias</span>
+          <span class="t-en">Necessary Only</span><span class="t-es" hidden>Solo necesarias</span>
         </button>
         <button type="button" class="cookie-btn cookie-btn--solid" data-cookie-choice="all">
-          <span class="t-en">Accept</span><span class="t-es" hidden>Aceptar</span>
+          <span class="t-en">Accept All</span><span class="t-es" hidden>Aceptar todo</span>
         </button>
       </div>
     </div>
