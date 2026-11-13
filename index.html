@@ -19,10 +19,12 @@
   <meta name="twitter:title" content="Local Standard | NYC Web Design for Local Businesses">
   <meta name="twitter:description" content="Websites, branding, SEO, and automation for New York City’s neighborhood businesses.">
   <meta name="twitter:image" content="images/og-image.jpg">
-  <link rel="stylesheet" href="brand.css?v=20261112x">
-  <link rel="stylesheet" href="styles.css?v=20261112x">
+  <link rel="stylesheet" href="brand.css?v=20261113r">
+  <link rel="stylesheet" href="styles.css?v=20261113r">
   <link rel="preload" as="image" href="images/hero-map-desktop.jpg" type="image/jpeg" media="(min-width: 861px)">
   <link rel="preload" as="image" href="images/hero-map-mobile.jpg" type="image/jpeg" media="(max-width: 860px)">
+  <link rel="preload" as="image" href="images/services-map-desktop.jpg" type="image/jpeg" media="(min-width: 861px)">
+  <link rel="preload" as="image" href="images/services-map-mobile.jpg" type="image/jpeg" media="(max-width: 860px)">
   <link rel="preload" as="image" href="images/queens-doughnut.webp" type="image/webp">
   <link rel="preload" as="image" href="images/coffee-cup.webp" type="image/webp">
   <script>
@@ -107,83 +109,95 @@
 
     <section class="band band--cream section" id="services" aria-labelledby="services-title">
       <div class="canvas services-layout">
-        <div class="services-intro">
+        <header class="services-intro">
+          <p class="services-eyebrow">
+            <span class="t-en"><span class="services-eyebrow__brand">Local Standard</span></span>
+            <span class="t-es" hidden><span class="services-eyebrow__brand">Local Standard</span></span>
+          </p>
           <h1 class="t-heading" id="services-title"><span class="t-en">Services</span><span class="t-es" hidden>Servicios</span></h1>
-        </div>
+        </header>
         <div class="service-cards">
-          <article class="tile">
-            <div>
+          <article class="service-item">
+            <span class="service-num" aria-hidden="true">01</span>
+            <div class="service-copy">
               <h3 class="tile-name" id="offer-web"><span class="t-en">Websites</span><span class="t-es" hidden>Páginas web</span></h3>
               <p><span class="t-en">A modern, clean site that turns visitors into customers.</span><span class="t-es" hidden>Una web moderna y minimalista que transforma visitas en clientes.</span></p>
             </div>
-            <a class="btn btn--service" href="#contact"><span class="t-en">Build your site</span><span class="t-es" hidden>Crea tu página</span></a>
+            <a class="service-link" href="#contact"><span class="t-en">Build your site</span><span class="t-es" hidden>Crea tu página</span></a>
           </article>
-          <article class="tile tile--wine">
-            <div>
+          <article class="service-item">
+            <span class="service-num" aria-hidden="true">02</span>
+            <div class="service-copy">
               <h3 class="tile-name" id="offer-brand"><span class="t-en">Branding</span><span class="t-es" hidden>Branding</span></h3>
               <p><span class="t-en">A clear identity people recognize and remember.</span><span class="t-es" hidden>Una identidad clara, reconocible y memorable.</span></p>
             </div>
-            <a class="btn btn--service" href="#contact"><span class="t-en">Create your brand</span><span class="t-es" hidden>Crea tu brand</span></a>
+            <a class="service-link" href="#contact"><span class="t-en">Create your brand</span><span class="t-es" hidden>Crea tu brand</span></a>
           </article>
-          <article class="tile tile--olive">
-            <div>
+          <article class="service-item">
+            <span class="service-num" aria-hidden="true">03</span>
+            <div class="service-copy">
               <h3 class="tile-name" id="offer-search"><span class="t-en">Visibility</span><span class="t-es" hidden>Visibilidad</span></h3>
               <p><span class="t-en">SEO &amp; AEO to help more customers find you.</span><span class="t-es" hidden>SEO y AEO para que tus clientes ideales te encuentren primero.</span></p>
             </div>
-            <a class="btn btn--service" href="#contact"><span class="t-en">Get found</span><span class="t-es" hidden>Posiciónate</span></a>
+            <a class="service-link" href="#contact"><span class="t-en">Get found</span><span class="t-es" hidden>Posiciónate</span></a>
           </article>
-          <article class="tile tile--blue">
-            <div>
+          <article class="service-item">
+            <span class="service-num" aria-hidden="true">04</span>
+            <div class="service-copy">
               <h3 class="tile-name" id="offer-ai"><span class="t-en">Automation</span><span class="t-es" hidden>Automatización</span></h3>
               <p><span class="t-en">Custom AI agents set up to handle repetitive tasks.</span><span class="t-es" hidden>Agentes de IA a medida que se encargan de las tareas repetitivas.</span></p>
             </div>
-            <a class="btn btn--service" href="#contact"><span class="t-en">Save time</span><span class="t-es" hidden>Gana tiempo</span></a>
+            <a class="service-link" href="#contact"><span class="t-en">Save time</span><span class="t-es" hidden>Gana tiempo</span></a>
           </article>
         </div>
       </div>
     </section>
 
     <section class="band band--wine section" id="offer" aria-labelledby="offer-title">
+      <div class="offer-art" aria-hidden="true">
+        <img
+          class="offer-art__img"
+          src="images/offer-broadway.png"
+          alt=""
+          width="655"
+          height="549"
+          decoding="async"
+          fetchpriority="high"
+        >
+      </div>
       <div class="canvas offer">
-        <header class="offer-intro">
-          <div class="offer-label-row">
+        <div class="offer-main">
+          <header class="offer-intro">
             <p class="t-eyebrow offer-label"><span class="t-en">Intro Package</span><span class="t-es" hidden>Pack Inicial</span></p>
-            <span class="offer-mark" aria-hidden="true">
-              <svg viewBox="0 0 46 46"><path d="M23 2.8 27.5 17l14.7-5.2-8.3 13.2 10.2 10.5-15-1.2L23 47l-6.1-13.7-15 1.2 10.2-10.5L3.8 10.8 18.5 16 23 2.8Z" fill="currentColor"/></svg>
-            </span>
-          </div>
-          <h2 class="offer-lede" id="offer-title">
-            <span class="t-en">Everything handled. So you can run your business.</span>
-            <span class="t-es" hidden>Nos encargamos de todo. Tú solo dedícate a tu negocio.</span>
-          </h2>
-        </header>
+            <h2 class="offer-lede" id="offer-title">
+              <span class="t-en">Everything handled. So you can run your business.</span>
+              <span class="t-es" hidden>Nos encargamos de todo. Tú solo dedícate a tu negocio.</span>
+            </h2>
+          </header>
 
-        <ul class="offer-list">
-          <li class="offer-item">
-            <h3 class="offer-item-name"><span class="t-en">Your own website</span><span class="t-es" hidden>Tu propio sitio</span></h3>
-            <p><span class="t-en">A polished, fast site with your services, prices, hours, photos, and a one-tap call button.</span><span class="t-es" hidden>Una página rápida y bien diseñada con tus servicios, precios, horarios, fotos y llamada directa en un toque.</span></p>
-          </li>
-          <li class="offer-item">
-            <h3 class="offer-item-name"><span class="t-en">Google &amp; ChatGPT</span><span class="t-es" hidden>Google y ChatGPT</span></h3>
-            <p><span class="t-en">Your search presence maximized so local customers can find you.</span><span class="t-es" hidden>Máxima visibilidad en buscadores para que los clientes de tu zona te encuentren primero.</span></p>
-          </li>
-          <li class="offer-item">
-            <h3 class="offer-item-name"><span class="t-en">Fresh photos</span><span class="t-es" hidden>Fotos nuevas</span></h3>
-            <p><span class="t-en">We visit your shop, take new photos, and add them to your site.</span><span class="t-es" hidden>Vamos a tu local, tomamos fotos nuevas y las agregamos a tu página web.</span></p>
-          </li>
-          <li class="offer-item">
-            <h3 class="offer-item-name"><span class="t-en">On-demand updates</span><span class="t-es" hidden>Cambios cuando quieras</span></h3>
-            <p><span class="t-en">Text us new hours, prices, or holiday closures. We’ll update your site the same day.</span><span class="t-es" hidden>Escríbenos si cambias tus horarios, precios o cierras por festivos. Lo actualizamos en tu página ese mismo día.</span></p>
-          </li>
-        </ul>
-
-        <div class="offer-footer">
-          <div class="offer-total">
-            <p class="offer-total-label"><span class="t-en">One-time fee</span><span class="t-es" hidden>Un solo pago</span></p>
-            <p class="offer-price">$2,500</p>
-          </div>
-          <a class="btn btn--offer" href="#contact"><span class="t-en">Let’s talk</span><span class="t-es" hidden>Hablemos</span></a>
+          <ul class="offer-list">
+            <li class="offer-item">
+              <h3 class="offer-item-name"><span class="t-en">Your own website</span><span class="t-es" hidden>Tu propio sitio</span></h3>
+              <p><span class="t-en">Services, hours, photos, and a one-tap call button.</span><span class="t-es" hidden>Servicios, horarios, fotos y llamada en un toque.</span></p>
+            </li>
+            <li class="offer-item">
+              <h3 class="offer-item-name"><span class="t-en">Google &amp; ChatGPT</span><span class="t-es" hidden>Google y ChatGPT</span></h3>
+              <p><span class="t-en">Search presence so local customers can find you.</span><span class="t-es" hidden>Visibilidad para que te encuentren en tu zona.</span></p>
+            </li>
+            <li class="offer-item">
+              <h3 class="offer-item-name"><span class="t-en">Fresh photos</span><span class="t-es" hidden>Fotos nuevas</span></h3>
+              <p><span class="t-en">We visit, shoot, and add new photos to your site.</span><span class="t-es" hidden>Vamos, fotografiamos y las subimos a tu sitio.</span></p>
+            </li>
+            <li class="offer-item">
+              <h3 class="offer-item-name"><span class="t-en">On-demand updates</span><span class="t-es" hidden>Cambios cuando quieras</span></h3>
+              <p><span class="t-en">Text a change; we update your site the same day.</span><span class="t-es" hidden>Escríbenos un cambio y lo actualizamos ese día.</span></p>
+            </li>
+          </ul>
         </div>
+
+        <aside class="offer-buy" aria-label="Next step" data-aria-en="Next step" data-aria-es="Siguiente paso">
+          <a class="btn btn--offer" href="#contact"><span class="t-en">Let’s talk</span><span class="t-es" hidden>Hablemos</span></a>
+        </aside>
       </div>
     </section>
 
