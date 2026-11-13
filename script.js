@@ -1,10 +1,11 @@
 /* Page behavior for Local Standard.
    Marquee, float, and spin live in brand.js.
-   Menu, contact send, and EN/ES visibility live here.
-   Editable copy: .t-en and .t-es text nodes in index.html. */
+   Menu, contact send, EN/ES, and cookie consent live here.
+   Editable copy: .t-en and .t-es text nodes in index.html / legal.html. */
 
 (() => {
   const STORAGE_KEY = "ls-lang";
+  const CONSENT_KEY = "ls-consent";
   const root = document.documentElement;
   const toggle = document.querySelector(".menu-toggle");
   const menu = document.querySelector("#site-menu");
@@ -125,13 +126,95 @@
   const year = document.querySelector("#year");
   if (year) year.textContent = String(new Date().getFullYear());
 
+  /* Cookie consent: necessary storage always; analytics only after opt-in (CA + EU). */
+  const cookieBanner = document.querySelector("#cookie-banner");
+
+  function readConsent() {
+    try {
+      const raw = localStorage.getItem(CONSENT_KEY);
+      if (!raw) return null;
+      const parsed = JSON.parse(raw);
+      if (!parsed || (parsed.analytics !== true && parsed.analytics !== false)) return null;
+      return parsed;
+    } catch (error) {
+      return null;
+    }
+  }
+
+  function writeConsent(analyticsAllowed) {
+    const payload = {
+      necessary: true,
+      analytics: Boolean(analyticsAllowed),
+      updatedAt: new Date().toISOString()
+    };
+    try {
+      localStorage.setItem(CONSENT_KEY, JSON.stringify(payload));
+    } catch (error) {
+      /* ignore private-mode storage failures */
+    }
+    root.dataset.consentAnalytics = payload.analytics ? "1" : "0";
+    applyAnalytics(payload.analytics);
+    return payload;
+  }
+
+  function applyAnalytics(allowed) {
+    /* Hook for future analytics tags — load only when allowed is true. */
+    if (!allowed) {
+      document.querySelectorAll("[data-analytics-script]").forEach((el) => el.remove());
+      return;
+    }
+  }
+
+  function showCookieBanner() {
+    if (!cookieBanner) return;
+    cookieBanner.hidden = false;
+    applyLanguage(currentLang);
+  }
+
+  function hideCookieBanner() {
+    if (!cookieBanner) return;
+    cookieBanner.hidden = true;
+  }
+
+  const existingConsent = readConsent();
+  if (existingConsent) {
+    root.dataset.consentAnalytics = existingConsent.analytics ? "1" : "0";
+    applyAnalytics(existingConsent.analytics);
+    hideCookieBanner();
+  } else {
+    root.dataset.consentAnalytics = "0";
+    applyAnalytics(false);
+    showCookieBanner();
+  }
+
+  document.querySelectorAll("[data-cookie-choice]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      const choice = btn.getAttribute("data-cookie-choice");
+      writeConsent(choice === "all");
+      hideCookieBanner();
+    });
+  });
+
+  document.querySelectorAll("[data-open-cookie-settings]").forEach((btn) => {
+    btn.addEventListener("click", () => {
+      showCookieBanner();
+      if (cookieBanner) cookieBanner.scrollIntoView({ block: "end" });
+    });
+  });
+
   const contactForm = document.querySelector("#contact-form");
   const contactEmail = "skhander@gmail.com";
   const submitButton = contactForm ? contactForm.querySelector('button[type="submit"]') : null;
+  const consentInput = contactForm ? contactForm.querySelector("#form-consent") : null;
 
   if (contactForm) {
     contactForm.addEventListener("submit", async (event) => {
       event.preventDefault();
+      if (consentInput && !consentInput.checked) {
+        if (formNote) formNote.textContent = note("consent");
+        consentInput.focus();
+        return;
+      }
       if (!contactForm.reportValidity()) return;
 
       const formData = new FormData(contactForm);
@@ -155,6 +238,7 @@
             email: email,
             interest: interest,
             message: message || note("empty"),
+            consent: "yes",
             _subject: note("subject") + interest,
             _replyto: email,
             _template: "table"

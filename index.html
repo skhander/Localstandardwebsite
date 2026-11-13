@@ -19,8 +19,10 @@
   <meta name="twitter:title" content="Local Standard | NYC Web Design for Local Businesses">
   <meta name="twitter:description" content="Websites, branding, SEO, and automation for New York City’s neighborhood businesses.">
   <meta name="twitter:image" content="images/og-image.jpg">
-  <link rel="stylesheet" href="brand.css">
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="brand.css?v=20261112x">
+  <link rel="stylesheet" href="styles.css?v=20261112x">
+  <link rel="preload" as="image" href="images/hero-map-desktop.jpg" type="image/jpeg" media="(min-width: 861px)">
+  <link rel="preload" as="image" href="images/hero-map-mobile.jpg" type="image/jpeg" media="(max-width: 860px)">
   <link rel="preload" as="image" href="images/queens-doughnut.webp" type="image/webp">
   <link rel="preload" as="image" href="images/coffee-cup.webp" type="image/webp">
   <script>
@@ -31,8 +33,8 @@
       } catch (e) {}
     })();
   </script>
-  <script src="brand.js" defer></script>
-  <script src="script.js" defer></script>
+  <script src="brand.js?v=20261112v" defer></script>
+  <script src="script.js?v=20261112v" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main"><span class="t-en">Skip to content</span><span class="t-es" hidden>Saltar al contenido</span></a>
@@ -53,7 +55,7 @@
       </nav>
 
       <a class="brand" href="#top" aria-label="Local Standard, home" data-aria-en="Local Standard, home" data-aria-es="Local Standard, inicio">
-        <img src="images/logo.png" alt="">
+        <img src="images/logo.png" alt="Local Standard" width="160" height="40">
       </a>
 
       <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Menu" data-aria-en="Menu" data-aria-es="Menú" data-aria-close-en="Close menu" data-aria-close-es="Cerrar menú">
@@ -73,13 +75,13 @@
             <span class="t-es" hidden>Tu negocio merece ser <span class="hero-heat">visto</span>.</span>
           </h1>
           <p class="t-body-lg measure">
-            <span class="t-en">Local Standard builds websites and tools that help New York City small businesses stand out and win more customers.</span>
+            <span class="t-en">Local Standard builds websites and tools that help New York's local spots stand out and win more customers.</span>
             <span class="t-es" hidden>En Local Standard creamos páginas web y herramientas para que tu negocio destaque.</span>
           </p>
           <a class="btn" href="#services"><span class="t-en">Explore Services</span><span class="t-es" hidden>Qué hacemos</span></a>
         </div>
         <div class="hero-art" aria-hidden="true">
-          <div class="sticker-pair" data-float>
+          <div class="sticker-pair">
             <img
               class="sticker sticker-doughnut"
               src="images/queens-doughnut.webp"
@@ -216,13 +218,21 @@
             <textarea id="message" name="message" rows="3"></textarea>
           </label>
           <input class="form-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <label class="field field-consent" for="form-consent">
+            <input id="form-consent" name="consent" type="checkbox" value="yes" required>
+            <span class="field-consent__text">
+              <span class="t-en">I agree to be contacted about this inquiry and accept the <a href="legal.html#forms">form</a> and <a href="legal.html#privacy">privacy</a> terms.</span>
+              <span class="t-es" hidden>Acepto que me contacten sobre esta consulta y acepto los términos del <a href="legal.html#forms">formulario</a> y la <a href="legal.html#privacy">privacidad</a>.</span>
+            </span>
+          </label>
           <button class="btn" type="submit"><span class="t-en">Let’s talk</span><span class="t-es" hidden>Hablemos</span></button>
           <p class="form-note" id="form-note" role="status" aria-live="polite"
             data-sending-en="Sending…" data-sending-es="Enviando…"
             data-success-en="Got it — we’ll be in touch soon." data-success-es="Listo — te escribimos pronto."
             data-error-en="Something went wrong. Email skhander@gmail.com directly and we’ll get back to you." data-error-es="Algo falló. Escríbenos a skhander@gmail.com y te respondemos."
             data-empty-en="(No details added.)" data-empty-es="(Sin detalles.)"
-            data-subject-en="Project inquiry — " data-subject-es="Consulta de proyecto — "></p>
+            data-subject-en="Project inquiry — " data-subject-es="Consulta de proyecto — "
+            data-consent-en="Please confirm the form consent checkbox." data-consent-es="Confirma la casilla de consentimiento."></p>
         </form>
       </div>
     </section>
@@ -247,9 +257,42 @@
         decoding="async"
         hidden
       >
+      <nav class="footer-legal" aria-label="Legal" data-aria-en="Legal" data-aria-es="Legal">
+        <a class="footer-legal__link" href="legal.html#privacy"><span class="t-en">Privacy</span><span class="t-es" hidden>Privacidad</span></a>
+        <a class="footer-legal__link" href="legal.html#terms"><span class="t-en">Terms</span><span class="t-es" hidden>Términos</span></a>
+        <a class="footer-legal__link" href="legal.html#cookies"><span class="t-en">Cookies</span><span class="t-es" hidden>Cookies</span></a>
+        <a class="footer-legal__link" href="legal.html#refunds"><span class="t-en">Refunds</span><span class="t-es" hidden>Reembolsos</span></a>
+        <a class="footer-legal__link" href="legal.html"><span class="t-en">Full legal</span><span class="t-es" hidden>Legal completo</span></a>
+      </nav>
       <p class="t-eyebrow">© <span id="year">2026</span> Local Standard</p>
       <a class="nav-link" href="#top"><span class="t-en">Back to the top</span><span class="t-es" hidden>Volver arriba</span></a>
+      <button type="button" class="footer-cookie-btn" data-open-cookie-settings>
+        <span class="t-en">Cookie settings</span><span class="t-es" hidden>Configurar cookies</span>
+      </button>
     </div>
   </footer>
+
+  <div class="cookie-banner" id="cookie-banner" hidden role="dialog" aria-modal="false" aria-labelledby="cookie-banner-title" data-aria-en="Cookie preferences" data-aria-es="Preferencias de cookies">
+    <div class="cookie-banner__inner">
+      <div class="cookie-banner__copy">
+        <p class="cookie-banner__title" id="cookie-banner-title">
+          <span class="t-en">Cookies &amp; privacy</span>
+          <span class="t-es" hidden>Cookies y privacidad</span>
+        </p>
+        <p class="cookie-banner__text">
+          <span class="t-en">We use necessary cookies for language and your choices. Optional analytics stay off until you accept. Applies for California and EU visitors. <a href="legal.html#cookies">Cookie policy</a></span>
+          <span class="t-es" hidden>Usamos cookies necesarias para el idioma y tus preferencias. La analítica opcional permanece apagada hasta que aceptes. Aplica para visitantes de California y la UE. <a href="legal.html#cookies">Política de cookies</a></span>
+        </p>
+      </div>
+      <div class="cookie-banner__actions">
+        <button type="button" class="btn btn--cookie-secondary" data-cookie-choice="necessary">
+          <span class="t-en">Necessary only</span><span class="t-es" hidden>Solo necesarias</span>
+        </button>
+        <button type="button" class="btn btn--cookie" data-cookie-choice="all">
+          <span class="t-en">Accept all</span><span class="t-es" hidden>Aceptar todo</span>
+        </button>
+      </div>
+    </div>
+  </div>
 </body>
 </html>
