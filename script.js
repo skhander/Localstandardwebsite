@@ -203,7 +203,7 @@
   });
 
   const contactForm = document.querySelector("#contact-form");
-  const contactEmail = "skhander@gmail.com";
+  const contactEmail = "localstandardagency@gmail.com";
   const submitButton = contactForm ? contactForm.querySelector('button[type="submit"]') : null;
   const consentInput = contactForm ? contactForm.querySelector("#form-consent") : null;
 
