@@ -549,13 +549,14 @@ section, .marquee { scroll-margin-top: var(--header-height); }
 }
 
 .service-link::after {
-  content: " →";
+  content: "→";
   display: inline-block;
+  margin-left: 0.45em;
   color: var(--red);
   font-weight: 700;
   font-size: 1.05em;
   line-height: 1;
-  letter-spacing: 0.02em;
+  letter-spacing: 0;
   transform: translateY(0.02em);
   -webkit-text-stroke: 0.55px var(--red);
   text-stroke: 0.55px var(--red);
