@@ -197,7 +197,7 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
-  opacity: 0.9;
+  opacity: 0.65;
   pointer-events: none;
 }
 
@@ -372,6 +372,7 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  opacity: 0.65;
   pointer-events: none;
 }
 
@@ -1149,7 +1150,7 @@ section, .marquee { scroll-margin-top: var(--header-height); }
 
   #services.section::before {
     background-image: url("images/services-map-mobile.jpg");
-    opacity: 0.4;
+    opacity: 0.65;
   }
 
   .services-layout {
