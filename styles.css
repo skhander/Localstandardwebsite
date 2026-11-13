@@ -1130,8 +1130,8 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   }
 
   .hero.section::before {
-    background-image: url("images/hero-map-mobile.jpg");
-    opacity: 0.35;
+    content: none;
+    background-image: none;
   }
 
   .hero.section > .canvas {
@@ -1164,8 +1164,8 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   }
 
   #services.section::before {
-    background-image: url("images/services-map-mobile.jpg");
-    opacity: 0.35;
+    content: none;
+    background-image: none;
   }
 
   .services-layout {
