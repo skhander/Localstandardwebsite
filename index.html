@@ -24,8 +24,8 @@
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Birthstone&family=Caveat&family=Courier+Prime&family=Fraunces:opsz,wght,SOFT@9..144,400,50&display=swap">
   <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=switzer@400&display=swap">
-  <link rel="stylesheet" href="brand.css?v=20261117i">
-  <link rel="stylesheet" href="styles.css?v=20261117i">
+  <link rel="stylesheet" href="brand.css?v=20261117j">
+  <link rel="stylesheet" href="styles.css?v=20261117j">
   <link rel="preload" as="image" href="images/hero-map-desktop.jpg" type="image/jpeg" media="(min-width: 861px)">
   <link rel="preload" as="image" href="images/hero-map-mobile.jpg" type="image/jpeg" media="(max-width: 860px)">
   <link rel="preload" as="image" href="images/services-map-desktop.jpg" type="image/jpeg" media="(min-width: 861px)">
@@ -315,25 +315,22 @@
 
   <div class="cookie-banner" id="cookie-banner" hidden role="dialog" aria-modal="false" aria-labelledby="cookie-banner-title" data-aria-en="Cookie preferences" data-aria-es="Preferencias de cookies">
     <div class="cookie-banner__inner">
+      <button
+        type="button"
+        class="cookie-banner__close"
+        data-cookie-choice="necessary"
+        aria-label="Close"
+        data-aria-en="Close"
+        data-aria-es="Cerrar"
+      >
+        <span aria-hidden="true">×</span>
+      </button>
+
       <div class="cookie-banner__header">
-        <button
-          type="button"
-          class="cookie-banner__close"
-          data-cookie-choice="necessary"
-          aria-label="Close"
-          data-aria-en="Close"
-          data-aria-es="Cerrar"
-        >
-          <span aria-hidden="true">×</span>
-        </button>
         <p class="cookie-banner__title" id="cookie-banner-title">
           <span class="t-en">Cookies, your choice.</span>
           <span class="t-es" hidden>Cookies, tú eliges.</span>
         </p>
-        <a class="cookie-banner__policy" href="legal.html#cookies">
-          <span class="t-en">Policy</span>
-          <span class="t-es" hidden>Política</span>
-        </a>
       </div>
 
       <div class="cookie-banner__choices">
@@ -366,6 +363,11 @@
           </span>
         </button>
       </div>
+
+      <a class="cookie-banner__policy" href="legal.html#cookies">
+        <span class="t-en">Cookie policy</span>
+        <span class="t-es" hidden>Política de cookies</span>
+      </a>
     </div>
   </div>
 </body>
