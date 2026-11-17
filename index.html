@@ -24,8 +24,8 @@
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Birthstone&family=Caveat&family=Courier+Prime&family=Fraunces:opsz,wght,SOFT@9..144,400,50&display=swap">
   <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=switzer@400&display=swap">
-  <link rel="stylesheet" href="brand.css?v=20261117g">
-  <link rel="stylesheet" href="styles.css?v=20261117g">
+  <link rel="stylesheet" href="brand.css?v=20261117i">
+  <link rel="stylesheet" href="styles.css?v=20261117i">
   <link rel="preload" as="image" href="images/hero-map-desktop.jpg" type="image/jpeg" media="(min-width: 861px)">
   <link rel="preload" as="image" href="images/hero-map-mobile.jpg" type="image/jpeg" media="(max-width: 860px)">
   <link rel="preload" as="image" href="images/services-map-desktop.jpg" type="image/jpeg" media="(min-width: 861px)">
@@ -316,6 +316,16 @@
   <div class="cookie-banner" id="cookie-banner" hidden role="dialog" aria-modal="false" aria-labelledby="cookie-banner-title" data-aria-en="Cookie preferences" data-aria-es="Preferencias de cookies">
     <div class="cookie-banner__inner">
       <div class="cookie-banner__header">
+        <button
+          type="button"
+          class="cookie-banner__close"
+          data-cookie-choice="necessary"
+          aria-label="Close"
+          data-aria-en="Close"
+          data-aria-es="Cerrar"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
         <p class="cookie-banner__title" id="cookie-banner-title">
           <span class="t-en">Cookies, your choice.</span>
           <span class="t-es" hidden>Cookies, tú eliges.</span>
@@ -341,7 +351,7 @@
             <span class="t-es" hidden><span class="cookie-label-full">Cookies esenciales</span><span class="cookie-label-short">Esenciales</span></span>
           </span>
         </button>
-        <button type="button" class="cookie-choice" data-cookie-choice="all">
+        <button type="button" class="cookie-choice cookie-choice--all" data-cookie-choice="all">
           <img
             class="cookie-choice__art"
             src="images/cookie-whole.png?v=20261117e"
