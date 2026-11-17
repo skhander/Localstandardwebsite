@@ -196,10 +196,18 @@
   });
 
   document.querySelectorAll("[data-open-cookie-settings]").forEach((btn) => {
-    btn.addEventListener("click", () => {
+    btn.addEventListener("click", (event) => {
+      event.stopPropagation();
       showCookieBanner();
       if (cookieBanner) cookieBanner.scrollIntoView({ block: "end" });
     });
+  });
+
+  document.addEventListener("pointerdown", (event) => {
+    if (!cookieBanner || cookieBanner.hidden) return;
+    if (cookieBanner.contains(event.target)) return;
+    writeConsent(false);
+    hideCookieBanner();
   });
 
   const contactForm = document.querySelector("#contact-form");

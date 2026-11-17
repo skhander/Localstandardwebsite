@@ -24,8 +24,8 @@
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Birthstone&family=Caveat&family=Courier+Prime&family=Fraunces:opsz,wght,SOFT@9..144,400,50&display=swap">
   <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=switzer@400&display=swap">
-  <link rel="stylesheet" href="brand.css?v=20261114u">
-  <link rel="stylesheet" href="styles.css?v=20261114u">
+  <link rel="stylesheet" href="brand.css?v=20261117e">
+  <link rel="stylesheet" href="styles.css?v=20261117e">
   <link rel="preload" as="image" href="images/hero-map-desktop.jpg" type="image/jpeg" media="(min-width: 861px)">
   <link rel="preload" as="image" href="images/hero-map-mobile.jpg" type="image/jpeg" media="(max-width: 860px)">
   <link rel="preload" as="image" href="images/services-map-desktop.jpg" type="image/jpeg" media="(min-width: 861px)">
@@ -46,7 +46,7 @@
     })();
   </script>
   <script src="brand.js?v=20261114f" defer></script>
-  <script src="script.js?v=20261114f" defer></script>
+  <script src="script.js?v=20261117c" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main"><span class="t-en">Skip to content</span><span class="t-es" hidden>Saltar al contenido</span></a>
@@ -315,16 +315,45 @@
 
   <div class="cookie-banner" id="cookie-banner" hidden role="dialog" aria-modal="false" aria-labelledby="cookie-banner-title" data-aria-en="Cookie preferences" data-aria-es="Preferencias de cookies">
     <div class="cookie-banner__inner">
-      <p class="cookie-banner__text" id="cookie-banner-title">
-        <span class="t-en">We use cookies to improve your browsing experience and analyze site traffic. <a href="legal.html#cookies">Policy</a></span>
-        <span class="t-es" hidden>Usamos cookies para mejorar tu experiencia y analizar el tráfico del sitio. <a href="legal.html#cookies">Política</a></span>
-      </p>
-      <div class="cookie-banner__actions">
-        <button type="button" class="cookie-btn cookie-btn--ghost" data-cookie-choice="necessary">
-          <span class="t-en">Necessary Only</span><span class="t-es" hidden>Solo necesarias</span>
+      <div class="cookie-banner__header">
+        <p class="cookie-banner__title" id="cookie-banner-title">
+          <span class="t-en">Cookies, your choice.</span>
+          <span class="t-es" hidden>Cookies, tú eliges.</span>
+        </p>
+        <a class="cookie-banner__policy" href="legal.html#cookies">
+          <span class="t-en">Policy</span>
+          <span class="t-es" hidden>Política</span>
+        </a>
+      </div>
+
+      <div class="cookie-banner__choices">
+        <button type="button" class="cookie-choice" data-cookie-choice="necessary">
+          <img
+            class="cookie-choice__art"
+            src="images/cookie-bitten.png?v=20261117e"
+            alt=""
+            width="655"
+            height="598"
+            decoding="async"
+          >
+          <span class="cookie-choice__label">
+            <span class="t-en">Essential Cookies</span>
+            <span class="t-es" hidden>Cookies esenciales</span>
+          </span>
         </button>
-        <button type="button" class="cookie-btn cookie-btn--solid" data-cookie-choice="all">
-          <span class="t-en">Accept All</span><span class="t-es" hidden>Aceptar todo</span>
+        <button type="button" class="cookie-choice" data-cookie-choice="all">
+          <img
+            class="cookie-choice__art"
+            src="images/cookie-whole.png?v=20261117e"
+            alt=""
+            width="655"
+            height="598"
+            decoding="async"
+          >
+          <span class="cookie-choice__label">
+            <span class="t-en">Accept All</span>
+            <span class="t-es" hidden>Aceptar todo</span>
+          </span>
         </button>
       </div>
     </div>
