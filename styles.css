@@ -897,7 +897,8 @@ section, .marquee { scroll-margin-top: var(--header-height); }
   align-items: flex-start;
   justify-content: center;
   gap: 0.65rem;
-  max-width: 28rem;
+  width: 100%;
+  max-width: none;
   margin-inline: auto;
   text-align: left;
   text-transform: none;
@@ -919,6 +920,7 @@ section, .marquee { scroll-margin-top: var(--header-height); }
 
 .field-consent__text {
   display: block;
+  white-space: nowrap;
 }
 
 .field-consent a {
@@ -1619,6 +1621,10 @@ section, .marquee { scroll-margin-top: var(--header-height); }
 
   .contact-form {
     gap: var(--space-md);
+  }
+
+  .field-consent__text {
+    white-space: normal;
   }
 
   .contact-form .btn,
