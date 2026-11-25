@@ -23,9 +23,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="preconnect" href="https://api.fontshare.com" crossorigin>
   <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Birthstone&family=Caveat&family=Courier+Prime&family=Fraunces:opsz,wght,SOFT@9..144,400,50&display=swap">
-  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=switzer@400&display=swap">
+  <link rel="stylesheet" href="https://api.fontshare.com/v2/css?f[]=switzer@400,700&display=swap">
   <link rel="stylesheet" href="brand.css?v=20261117q">
-  <link rel="stylesheet" href="styles.css?v=20261117q">
+  <link rel="stylesheet" href="styles.css?v=20261125f">
   <link rel="preload" as="image" href="images/hero-map-desktop.jpg" type="image/jpeg" media="(min-width: 861px)">
   <link rel="preload" as="image" href="images/hero-map-mobile.jpg" type="image/jpeg" media="(max-width: 860px)">
   <link rel="preload" as="image" href="images/services-map-desktop.jpg" type="image/jpeg" media="(min-width: 861px)">
@@ -231,44 +231,83 @@
     </section>
 
     <section class="band band--black section" id="contact" aria-labelledby="contact-title">
-      <div class="canvas split">
-        <div class="prose">
-          <h2 class="t-heading" id="contact-title"><span class="t-en">Contact</span><span class="t-es" hidden>Contacto</span></h2>
-          <p class="t-body-lg">
-            <span class="t-en">Tell us about your business. We'll take it from there.</span>
-            <span class="t-es" hidden>Platícanos de tu negocio. De lo demás nos encargamos nosotros.</span>
+      <div class="canvas split contact-layout">
+        <div class="prose contact-intro">
+          <h2 class="t-heading" id="contact-title"><span class="t-en"><span class="hero-heat">Contact</span></span><span class="t-es" hidden><span class="hero-heat">Contacto</span></span></h2>
+          <p class="t-body-lg contact-intro__copy">
+            <span class="t-en">Tell us about your business.<br>We'll take it from there.</span>
+            <span class="t-es" hidden>Platícanos de tu negocio.<br>De lo demás nos encargamos nosotros.</span>
           </p>
         </div>
-        <form class="contact-form" id="contact-form">
-          <label class="field" for="name"><span class="t-en">Name</span><span class="t-es" hidden>Nombre</span>
-            <input id="name" name="name" type="text" autocomplete="name" required>
-          </label>
-          <label class="field" for="email"><span class="t-en">Email</span><span class="t-es" hidden>Correo</span>
-            <input id="email" name="email" type="email" autocomplete="email" required>
-          </label>
-          <label class="field" for="interest"><span class="t-en">Service</span><span class="t-es" hidden>Servicio</span>
-            <select id="interest" name="interest" required>
-              <option value="" selected disabled data-en="Choose a Service" data-es="Elige un servicio">Choose a Service</option>
-              <option data-en="Intro Package" data-es="Pack Inicial">Intro Package</option>
-              <option data-en="Website Design &amp; Development" data-es="Diseño y desarrollo web">Website Design &amp; Development</option>
-              <option data-en="Brand &amp; Identity" data-es="Marca e identidad">Brand &amp; Identity</option>
-              <option data-en="Reputation &amp; Search (SEO + AEO)" data-es="Reputación y búsqueda (SEO + AEO)">Reputation &amp; Search (SEO + AEO)</option>
-              <option data-en="AI &amp; Automation" data-es="IA y automatización">AI &amp; Automation</option>
-              <option data-en="A little bit of everything" data-es="Un poco de todo">A little bit of everything</option>
-            </select>
-          </label>
-          <label class="field" for="message"><span class="t-en">Details</span><span class="t-es" hidden>Detalles</span>
-            <textarea id="message" name="message" rows="3"></textarea>
-          </label>
+        <form class="contact-form contact-form--stacked" id="contact-form">
+          <div class="contact-fields">
+            <div class="contact-field-group">
+              <p class="contact-prompt" id="contact-prompt-name">
+                <span class="t-en">My name is</span>
+                <span class="t-es" hidden>Me llamo</span>
+              </p>
+              <label class="visually-hidden" for="name">
+                <span class="t-en">First and last name</span>
+                <span class="t-es" hidden>Nombre y apellido</span>
+              </label>
+              <input class="contact-control" id="name" name="name" type="text" autocomplete="name" required
+                aria-labelledby="contact-prompt-name"
+                data-placeholder-en="First and last name" data-placeholder-es="Nombre y apellido">
+            </div>
+            <div class="contact-field-group">
+              <p class="contact-prompt" id="contact-prompt-service">
+                <span class="t-en">I'm looking for help with</span>
+                <span class="t-es" hidden>Busco ayuda con</span>
+              </p>
+              <label class="visually-hidden" for="interest">
+                <span class="t-en">Service</span>
+                <span class="t-es" hidden>Servicio</span>
+              </label>
+              <select class="contact-control contact-control--select" id="interest" name="interest" required aria-labelledby="contact-prompt-service">
+                <option value="" selected disabled data-en="Choose a service" data-es="Elige un servicio">Choose a service</option>
+                <option value="Website Design &amp; Development" data-en="Website Design &amp; Development" data-es="Diseño y desarrollo web">Website Design &amp; Development</option>
+                <option value="Brand &amp; Identity" data-en="Brand &amp; Identity" data-es="Marca e identidad">Brand &amp; Identity</option>
+                <option value="Reputation &amp; Search (SEO + AEO)" data-en="Reputation &amp; Search (SEO + AEO)" data-es="Reputación y búsqueda (SEO + AEO)">Reputation &amp; Search (SEO + AEO)</option>
+                <option value="AI &amp; Automation" data-en="AI &amp; Automation" data-es="IA y automatización">AI &amp; Automation</option>
+                <option value="A little bit of everything" data-en="A little bit of everything" data-es="Un poco de todo">A little bit of everything</option>
+              </select>
+            </div>
+            <div class="contact-field-group">
+              <p class="contact-prompt" id="contact-prompt-email">
+                <span class="t-en">You can reach me at</span>
+                <span class="t-es" hidden>Puedes escribirme a</span>
+              </p>
+              <label class="visually-hidden" for="email">
+                <span class="t-en">Email</span>
+                <span class="t-es" hidden>Correo</span>
+              </label>
+              <input class="contact-control" id="email" name="email" type="email" autocomplete="email" required
+                aria-labelledby="contact-prompt-email"
+                data-placeholder-en="Email address" data-placeholder-es="Correo electrónico">
+            </div>
+            <div class="contact-field-group">
+              <p class="contact-prompt" id="contact-prompt-details">
+                <span class="t-en">A little about my business</span>
+                <span class="t-es" hidden>Un poco sobre mi negocio</span>
+              </p>
+              <label class="visually-hidden" for="message">
+                <span class="t-en">Optional details</span>
+                <span class="t-es" hidden>Detalles opcionales</span>
+              </label>
+              <textarea class="contact-control contact-control--textarea" id="message" name="message" rows="4"
+                aria-labelledby="contact-prompt-details"
+                data-placeholder-en="Optional details" data-placeholder-es="Detalles opcionales"></textarea>
+            </div>
+          </div>
           <input class="form-honey" type="text" name="_honey" tabindex="-1" autocomplete="off" aria-hidden="true">
+          <button class="btn contact-form-submit" type="submit"><span class="t-en">Let’s talk</span><span class="t-es" hidden>Hablemos</span></button>
           <label class="field field-consent" for="form-consent">
             <input id="form-consent" name="consent" type="checkbox" value="yes" required checked>
             <span class="field-consent__text">
-              <span class="t-en">Contact me about my inquiry. I agree to the <a href="legal.html#forms">form terms</a> and <a href="legal.html#privacy">privacy policy</a>.</span>
+              <span class="t-en">Contact me about my inquiry. I agree to the <a href="legal.html#forms">terms</a> and <a href="legal.html#privacy">privacy policy</a>.</span>
               <span class="t-es" hidden>Contáctame sobre mi consulta. Acepto los <a href="legal.html#forms">términos del formulario</a> y la <a href="legal.html#privacy">política de privacidad</a>.</span>
             </span>
           </label>
-          <button class="btn" type="submit"><span class="t-en">Let’s talk</span><span class="t-es" hidden>Hablemos</span></button>
           <p class="form-note" id="form-note" role="status" aria-live="polite"
             data-sending-en="Sending…" data-sending-es="Enviando…"
             data-success-en="Got it — we’ll be in touch soon." data-success-es="Listo — te escribimos pronto."
@@ -283,23 +322,6 @@
 
   <footer class="band band--red section site-footer">
     <div class="canvas footer-grid">
-      <img
-        class="sticker sticker-speak t-en"
-        src="images/we-speak-sticker.png"
-        alt="We speak Español, বাংলা, اردو, and हिन्दी"
-        width="910"
-        height="284"
-        decoding="async"
-      >
-      <img
-        class="sticker sticker-speak t-es"
-        src="images/hablamos-sticker.png"
-        alt="Hablamos Español, বাংলা, اردو y हिन्दी"
-        width="1024"
-        height="341"
-        decoding="async"
-        hidden
-      >
       <nav class="footer-legal" aria-label="Legal" data-aria-en="Legal" data-aria-es="Legal">
         <a class="footer-legal__link" href="legal.html#privacy"><span class="t-en">Privacy</span><span class="t-es" hidden>Privacidad</span></a>
         <a class="footer-legal__link" href="legal.html#terms"><span class="t-en">Terms</span><span class="t-es" hidden>Términos</span></a>

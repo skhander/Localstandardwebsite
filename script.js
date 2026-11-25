@@ -48,6 +48,11 @@
       el.textContent = el.getAttribute(lang === "es" ? "data-es" : "data-en") || el.textContent;
     });
 
+    document.querySelectorAll("[data-placeholder-en][data-placeholder-es]").forEach((el) => {
+      const key = lang === "es" ? "data-placeholder-es" : "data-placeholder-en";
+      el.placeholder = el.getAttribute(key) || el.getAttribute("data-placeholder-en") || "";
+    });
+
     document.querySelectorAll("[data-aria-en]").forEach((el) => {
       if (el.classList.contains("menu-toggle")) {
         const open = el.getAttribute("aria-expanded") === "true";
